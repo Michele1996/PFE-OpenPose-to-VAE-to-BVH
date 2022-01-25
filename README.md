@@ -11,3 +11,11 @@ The project is split in 3 phases:
 * Use the outputs to train a VAE
 * Generate Data using the encoder
 * Reconstruct json file as OpenPose output and use MocapNET to have bvh files 
+
+## Generate Data
+First of all go to the directory and run the batch file 
+```batch
+run.bat
+```
+This file will download, split in scene, filter the scene , apply OpenPose and then filter the keypoints output json file
+(NOTE you will need to install youtube_dl https://pypi.org/project/youtube_dl/, pyscenedetect and ffmpeg https://pyscenedetect.readthedocs.io/en/latest/download/, and OpenPose https://github.com/CMU-Perceptual-Computing-Lab/openpose)
