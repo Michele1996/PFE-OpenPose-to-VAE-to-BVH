@@ -31,7 +31,7 @@ Now you can execute
 ```python
 python var_autoencoder nb_iter nb_frames
 ```
-
+Where nb_iter is the number of itereration creation of nb_frames frames by encoder \\
 To run the VAE and to generate data (and also visualize. if you need check the vae_autoencoder script) and save them in the same format as OpenPose output (we use all the 25 keypoints) \\
 The output of OpenPose is a json that contains among other information the x,y,confiance_score data for each of the 25 keypoints. We need to add to the encoder generated data, the confiance_score (just to make it work with MocapNET) so we can put it to 1 for all the keypoints
 
