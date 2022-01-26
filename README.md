@@ -51,3 +51,7 @@ from_vae_to_json_to_bvh.bat
 ```
 which will run all the process from train the autoencoder to create the bvh (it uses wsl linux bash)\\
 You can check https://github.com/FORTH-ModelBasedTracker/MocapNET/blob/master/doc/OpenPose.md if you have any doubt about the conversion made by MocapNET using the OpenPose json output
+
+## Test on Blender
+Now you have from a 2d Keypoints data , a 3D animation. You can check on Blender by importing the bvh file , the result of your animation
+(To add a human model to the skeleton create by the bvh file you can check https://www.youtube.com/watch?v=GBSC10euloY)
