@@ -31,5 +31,22 @@ Now you can execute
 ```python
 python var_autoencoder nb_iter nb_frames
 ```
+
 To run the VAE and to generate data (and also visualize. if you need check the vae_autoencoder script) and save them in the same format as OpenPose output (we use all the 25 keypoints) \\
 The output of OpenPose is a json that contains among other information the x,y,confiance_score data for each of the 25 keypoints. We need to add to the encoder generated data, the confiance_score (just to make it work with MocapNET) so we can put it to 1 for all the keypoints
+
+## Generate BVH from json using MocapNET
+You will need to clone https://github.com/FORTH-ModelBasedTracker/MocapNET in the directory and then follow their guide to build it 
+Now you can execute using a bash linux the following command:
+```python
+./convertOpenPoseJSONToCSV --from OUTPUT_to_BVH --size 640 480
+./MocapNET2CSV --from OUTPUT_to_BVH/2dJoints_v1.4.csv --size 640 480 --novisualization:
+```
+Where OUTPUT_to_BVH is the output inside MocapNET which contains all the json file created as shown below. All the json files names need to follow the pattern colorFrame_nb_video_XXXXX_keypoints.json. \\
+For example, you will have in the directory colorFrame_0_00000_keypoints.json, colorFrame_0_00001_keypoints.json etc.\\
+\\
+You can also run 
+```batch
+from_vae_to_json_to_bvh.bat
+```
+which will run all the process from train the autoencoder to create the bvh (it uses wsl linux bash)
