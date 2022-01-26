@@ -277,10 +277,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
+    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kp_3.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
-    x_train=load_data(name ="kp_3.npy")
+    x_train=load_data(name =args.data_file_location)
     autoencoder,encoder,decoder = VAE(latent_size = 25)
     scaler = MinMaxScaler()
     # transform data
@@ -290,7 +291,7 @@ if __name__ == '__main__':
 
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
-    decoder.save("./model_25kp_decoder")
+    decoder.save("./MODEL_25kp_decoder")
     
     #simple_visu(x_train,0)
     #test_points(x_train,random=True,n=4)
