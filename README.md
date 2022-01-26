@@ -49,4 +49,5 @@ You can also run
 ```batch
 from_vae_to_json_to_bvh.bat
 ```
-which will run all the process from train the autoencoder to create the bvh (it uses wsl linux bash)
+which will run all the process from train the autoencoder to create the bvh (it uses wsl linux bash)\\
+You can check https://github.com/FORTH-ModelBasedTracker/MocapNET/blob/master/doc/OpenPose.md if you have any doubt about the conversion made by MocapNET using the OpenPose json output
