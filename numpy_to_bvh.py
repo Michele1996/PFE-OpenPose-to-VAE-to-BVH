@@ -1057,9 +1057,10 @@ for i in range(len(x)):
         if(dictionary_bvh[p] in dictionary_skeleton_3.keys()):
            correct_skel_added+=1
            val=diction[i][dictionary_skeleton_3[dictionary_bvh[p]]]
-           new_line.append(val[0]*100)
-           new_line.append(val[1]*100)
-           new_line.append(val[2]*100)
+           new_line.append(val[0])
+           new_line.append(val[1])
+           new_line.append(val[2])
+#if you have also the angles for the hips you can add it here
            if(dictionary_bvh[p]=="hip"):
               print("hips")
               new_line.append(0)
