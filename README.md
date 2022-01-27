@@ -13,7 +13,7 @@ The project is split in 3 phases:
 * Reconstruct json file as OpenPose output and use MocapNET to have bvh files 
 
 ## Generate Data
-First of all go to the directory and run the batch file 
+First of all go to the directory and run the batch file
 ```batch
 run.bat
 ```
@@ -25,8 +25,8 @@ If you execute
 ```python
 python check_static_scene.py
 ```
-All the scenes that are static(as an image showed in a video, or a power point presentation and so on) will be deleted . The algorithm compute the difference  intensity in intensity between each frame and if the difference is  lower than a threshold , it is added to a list of frame that are similar. If more than 20% of the frames are similar the scene is deleted<br />
-While by executing
+All the scenes that are static(as an image showed in a video, or a power point presentation and so on) will be deleted . The algorithm compute the difference  intensity in intensity between each frame and if the difference is  lower than a threshold , it is added to a list of frame that are similar. If more than 20% of the frames are similar the scene is deleted.<br />
+While by executing:
 ```python
 python filter.py
 ```
