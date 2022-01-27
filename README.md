@@ -7,7 +7,7 @@ The project is split in 3 phases:
   * Use then pyscenedetect to split them in scenes
   * Filter the scenes (statique scenes)
 * Apply OpenPose on the scenes
-* Filter the scenes (back camera, body not well oriented, body parts missing....)
+* Filter the keypoints (back camera, body not well oriented, body parts missing....)
 * Use the outputs to train a VAE
 * Generate Data using the encoder
 * Reconstruct json file as OpenPose output and use MocapNET to have bvh files 
@@ -19,6 +19,18 @@ run.bat
 ```
 This file will download the videos (in video_ids.txt), split them in scenes, filter the scene , apply OpenPose and then filter the keypoints output json file
 (NOTE you will need to install youtube_dl https://pypi.org/project/youtube_dl/, pyscenedetect and ffmpeg https://pyscenedetect.readthedocs.io/en/latest/download/, and OpenPose https://github.com/CMU-Perceptual-Computing-Lab/openpose , using Body25 keypoints detection)
+
+## Filtering Scripts (Scenes and Keypoints)
+If you execute
+```python
+python check_static_scene.py
+```
+All the scenes that are statique(as an image showed in a video, or a power point presentation and so on) will be deleted <br />
+While by executing
+```python
+python filter.py
+```
+You will filter the keypoints. More precisely all the OpenPose json output will be deleted if any of the body part is missig, if the camera is on the back of the speaker, if the skeleton is not big enough, if the json contains data for more than 1 person or does not contains data (nobody in the scene) 
 
 ## Variational Auto-Encoder and Data Generation
 
