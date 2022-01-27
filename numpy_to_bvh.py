@@ -1027,9 +1027,12 @@ dictionary_skeleton_3={"hip":0,"lButtock":1,"lThigh":2,"lShin":3,"rButtock":4,"r
 x=numpy.load("preds3D.npy")
 diction={i : x[i] for i in  range(len(x))}
 #print(dictionary_skeleton)
-#bvh = open("out.bvh", "r")
+bvh = open("test_bvh", "w")
+bvh.write(bvh_joints)
+bvh.close()
 new_bvh=open("new.bvh","w")
-p_bvh=bvh.readlines()
+bvh_2=open("test_bvh", "r")
+p_bvh=bvh_2.readlines()
 lines=[]
 for line in p_bvh:
     if("JOINT" in line or "ROOT" in line):
@@ -1051,9 +1054,9 @@ for i in range(len(x)):
     print("PROCESSING "+str(i+1)+"/"+str(len(x))+" FRAME")
     for p in range(len(lines)):
 
-        if(dictionary_bvh[p] in dictionary_skeleton_2.keys()):
+        if(dictionary_bvh[p] in dictionary_skeleton_3.keys()):
            correct_skel_added+=1
-           val=diction[i][dictionary_skeleton_2[dictionary_bvh[p]]]
+           val=diction[i][dictionary_skeleton_3[dictionary_bvh[p]]]
            new_line.append(val[0]*100)
            new_line.append(val[1]*100)
            new_line.append(val[2]*100)
