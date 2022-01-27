@@ -1062,7 +1062,6 @@ for i in range(len(x)):
            new_line.append(val[2])
 #if you have also the angles for the hips you can add it here
            if(dictionary_bvh[p]=="hip"):
-              print("hips")
               new_line.append(0)
               new_line.append(0)
               new_line.append(0)
