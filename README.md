@@ -56,3 +56,12 @@ You can check https://github.com/FORTH-ModelBasedTracker/MocapNET/blob/master/do
 ## Test on Blender
 Now you have from a 2d Keypoints data , a 3D animation. You can check on Blender by importing the bvh file , the result of your animation
 (To add a human model to the skeleton create by the bvh file you can check https://www.youtube.com/watch?v=GBSC10euloY)
+
+## Conversion of Numpy Array to BVH
+In case of you have a numpy array with shape (nb_frames,nb_keypoints,3) you can use the script
+```python
+python numpy_to_bvh
+```
+to convert your numpy_array in a bvh animation. <br/>
+Check in the script the structure of the skeleton and modify it if you need. You can add a human model on the skeleton following the youtube tutorial above
+
