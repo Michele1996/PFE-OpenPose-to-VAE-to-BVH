@@ -27,7 +27,7 @@ list_file=glob.glob("videos/scenes/*.mp4")
 nb_similar_frame=0
 nb_frame=0
 parser = argparse.ArgumentParser()
-parser.add_argument("--threshold", required=False, default=0.00000001)
+parser.add_argument("--threshold", required=False, default=0.0001)
 args = parser.parse_args()
 print(args.threshold)
 args=float(args.threshold)
