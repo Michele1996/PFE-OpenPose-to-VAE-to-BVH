@@ -7,10 +7,7 @@ cd ..:
 python check_static_scene.py
 dir videos\scenes\* /b > filelist.txt
 :for each scene extract 3d keypoints:
-for /F %%i IN (filelist.txt) do bin\OpenPoseDemo.exe --video videos\scenes\%%i  --net_resolution -1x320 --write_json output\output_final --render_pose 0
+for /F %%i IN (filelist.txt) do bin\OpenPoseDemo.exe --video videos\scenes\%%i  --net_resolution -1x320 --write_json output_final --render_pose 0
 python filter.py
-python renam_files_for_MocapNET.py
-cd .. MocapNET-master
-:a utiliser avec bash linux:
-:./convertOpenPoseJSONToCSV --from BRUout --size 640 480:
-:./MocapNET2CSV --from BRUout/2dJoints_v1.4.csv --size 640 480 --novisualization:
+:create directory in which the json with keypoints of the same videos are moved
+python clean_output_dir
