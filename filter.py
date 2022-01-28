@@ -18,7 +18,7 @@ for filename in list_file:
                     list_file_to_discard.append(filename)
                     keep=False
                     f.close()
-                    if(os.path.isfile(path+filename)):
+                    if(os.path.isfile(filename)):
                         print("More than one person in this scene or no one in the scen, discard")
                         os.remove(filename)
           else:
@@ -28,7 +28,7 @@ for filename in list_file:
                        list_file_to_discard.append(filename)
                        keep=False
                        f.close()
-                       if(os.path.isfile(path+filename)):
+                       if(os.path.isfile(filename)):
                           print("Small Skeleton, discard scene",dist)
                           os.remove(filename)
                 dist=distance(data["people"][0]["pose_keypoints_2d"][4*3],data["people"][0]["pose_keypoints_2d"][4*3+1],data["people"][0]["pose_keypoints_2d"][7*3],data["people"][0]["pose_keypoints_2d"][7*3+1])
@@ -38,28 +38,28 @@ for filename in list_file:
                        list_file_to_discard.append(filename)
                        keep=False
                        f.close()
-                       if(os.path.isfile(path+filename)):
+                       if(os.path.isfile(filename)):
                           print("Camera on the back, discard scene")
                           os.remove(filename)
                 for i in range(0,len(data["people"][0]["pose_keypoints_2d"]),3):
                     if(data["people"][0]["pose_keypoints_2d"][i]==0):
                         keep=False
                         f.close()
-                        if(os.path.isfile(path+filename)):
+                        if(os.path.isfile(filename)):
                            print("Missing keypoint")
                            os.remove(filename)
                 for i in range(1,len(data["people"][0]["pose_keypoints_2d"]),3):
                     if(data["people"][0]["pose_keypoints_2d"][i]==0):
                         keep=False
                         f.close()
-                        if(os.path.isfile(path+filename)):
+                        if(os.path.isfile(filename)):
                             print("Missing keypoint")
                             os.remove(filename)
                     
           if(keep):
              print("keep "+filename)
           else:
-             print("Delete ",filename)
+             print("Delete "+filename)
           keep=True
                
 print(len(list_file_to_discard))
