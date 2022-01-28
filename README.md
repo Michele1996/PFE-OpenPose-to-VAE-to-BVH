@@ -41,7 +41,7 @@ python create_npy_one_video.py
 ```
 Or you can use this other script to create a .npy which will include all the json for all the videos
 ```python
-python create_npy_one_video.py
+python create_npy_all_video.py
 ```
 Now you can execute 
 ```python
