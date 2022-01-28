@@ -34,10 +34,14 @@ You will filter the keypoints. More precisely all the OpenPose json output will 
 
 ## Variational Auto-Encoder and Data Generation
 
-Now we will need to create a .npy file using the json output file of OpenPose.<br />
+Now we will need to create a .npy file fro one video using the json output file of OpenPose.<br />
 You can create it using the following command
 ```python
-python create_npy
+python create_npy_one_video.py
+```
+Or you can use this other script to create a .npy which will include all the json for all the videos
+```python
+python create_npy_one_video.py
 ```
 Now you can execute 
 ```python
