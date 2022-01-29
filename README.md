@@ -30,7 +30,8 @@ While by executing:
 ```python
 python filter.py
 ```
-You will filter the keypoints. More precisely all the OpenPose json output will be deleted if any of the body part is missig, if the camera is on the back of the speaker, if the skeleton is not big enough, if the json contains data for more than 1 person or does not contains data (nobody in the scene) 
+You will filter the keypoints. More precisely all the OpenPose json output will be deleted if any of the body part is missig, if the camera is on the back of the speaker, if the skeleton is not big enough, if the json contains data for more than 1 person or does not contains data (nobody in the scene)<br/>
+You can find keypoints filtered for 150 videos at the following link: https://drive.google.com/drive/folders/1iM7aa9yEMOSrr4X3Q7yvBCYomg9xdY3i?usp=sharing
 
 ## Variational Auto-Encoder and Data Generation
 
