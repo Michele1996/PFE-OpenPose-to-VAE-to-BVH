@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
+from tensorflow import keras
 import json
 import os
 import argparse
@@ -67,13 +68,18 @@ def visu_skel(x_train,index):
     plt.show()
 
     
-def visu_interpo(x_train,nb_iter,nb_frames,test,latent_size=2,show=True):
+def visu_interpo(x_train,nb_iter,nb_frames,test,scaler,latent_size=2,show=True):
     num_files=0
+    np.random.seed(42)
     for o in range (nb_iter):
         test_image1=x_train[np.random.randint(0,len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
         test_image2=x_train[np.random.randint(0,len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
         encoded_img1=encoder.predict(test_image1)
         encoded_img2=encoder.predict(test_image2)
+        #print(decoder.predict(encoded_img1)[0])
+        print(scaler.inverse_transform(decoder.predict(encoded_img1)[0]))
+        print(scaler.inverse_transform(decoder.predict(encoded_img2)[0]))
+        quit()
         interpolated_images=interpolate_points(encoded_img1.flatten(),encoded_img2.flatten())
         interpolated_orig_images=interpolate_points(test_image1.flatten(),test_image2.flatten())
         predict = (encoder.predict(x_train[::50]))
@@ -100,14 +106,12 @@ def visu_interpo(x_train,nb_iter,nb_frames,test,latent_size=2,show=True):
                 plt.show()
         interpolated_images.shape
         num_images = nb_frames
-        np.random.seed(42)
         for i, image_idx in enumerate(interpolated_images):
             
             inter = interpolated_images[i].reshape(1,interpolated_images[i].shape[0])
-            frame = decoder.predict(inter)[0]
-            frame = interpolated_orig_images[i]
-            #print(frame, len(frame))
-            save_json_for_MocapNET(decoder.predict(inter)[0],num_files,test)
+            frame = decoder.predict(inter)
+            print(scaler.inverse_transform(frame.reshape(25,2)))
+            save_json_for_MocapNET(scaler.inverse_transform(frame.reshape(25,2)),num_files,test)
             num_files+=1
             if(show and num_images<=10):
                 plt.figure(figsize=(20, 8))
@@ -216,11 +220,8 @@ def create_gif(name = 'mygif.gif'):
 def save_json_for_MocapNET(frame,index,test=False):
     vector=""
     for i in range(len(frame)):
-        if i%2==0 and i!=0:
-           vector+=str(1)+","
-        else:
            vector+=str(frame[i][0])+","
-           vector+=str(frame[i][1])+","
+           vector+=str(frame[i][1])+",1,"
     vector=vector[:len(vector)-1]
     print("VETTORE ",vector)
     data_set = {"version": 1.3, "people": [{"person_id":[-1],"pose_keypoints_2d":vector,"face_keypoints_2d":[],"hand_left_keypoints_2d":[],"hand_right_keypoints_2d":[],"pose_keypoints_3d":[],"face_keypoints_3d":[],"hand_left_keypoints_3d":[],"hand_right_keypoints_3d":[]}]}
@@ -239,6 +240,8 @@ def save_json_for_MocapNET(frame,index,test=False):
             os.mkdir(path+"\\Test")
         if(not os.path.isdir(path+"\\Test\\OUTPUT_to_BVH")):
             os.mkdir(path+"\\Test\\OUTPUT_to_BVH")
+        if(os.path.isfile(path+"\\Test\\OUTPUT_to_BVH\\"+filename)):
+            os.remove(path+"\\Test\\OUTPUT_to_BVH\\"+filename)
         os.rename(os.path.join(path, filename), os.path.join(path+"\\Test\\OUTPUT_to_BVH",filename))
     else:
         if(not os.path.isdir(path+"\\MocapNET-master")):
@@ -247,11 +250,15 @@ def save_json_for_MocapNET(frame,index,test=False):
         if(not os.path.isdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")):
             os.mkdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")
         os.rename(os.path.join(path, filename), os.path.join(path+"\\MocapNET-master\\OUTPUT_to_BVH",filename))
+        
+def root_mean_squared_error_loss(y_true, y_pred):
+     return keras.backend.sqrt(keras.backend.mean(keras.backend.square(y_pred - y_true)))
 
 def VAE(latent_size=25):
     ## Définition de l'architecture du modèle
     encoder_1_size = 256
     encoder_1_size_2 = 128
+    encoder_1_size_3 = 64
     latent_size = latent_size
     input_layer = tf.keras.layers.Input(shape = (25,2))
     flattened = tf.keras.layers.Flatten()(input_layer)
@@ -264,9 +271,8 @@ def VAE(latent_size=25):
     latent = tf.keras.layers.Dense(latent_size, activation = 'relu')(encoder_2)
     encoder = tf.keras.Model(inputs = input_layer, outputs = latent, name = 'encoder')
     #encoder.summary()
-
     input_layer_decoder = tf.keras.layers.Input(shape = encoder.output.shape[1:])
-    decoder_1 = tf.keras.layers.Dense(encoder_1_size, activation = 'sigmoid')(input_layer_decoder)
+    decoder_1 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'sigmoid')(input_layer_decoder)
     decoder_1 = tf.keras.layers.BatchNormalization()(decoder_1)
     decoder_1 = tf.keras.layers.Dropout(0.3)(decoder_1)
     decoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(decoder_1)
@@ -280,9 +286,7 @@ def VAE(latent_size=25):
     autoencoder = tf.keras.Model(inputs = encoder.input, outputs = decoder(encoder.output))
     autoencoder.summary()
 
-
-    sgd = tf.keras.optimizers.Adam()
-    autoencoder.compile(sgd, loss='mse', metrics=['accuracy'])
+    autoencoder.compile(optimizer="adam",loss=root_mean_squared_error_loss, metrics=[keras.metrics.RootMeanSquaredError(name='rmse')])
     return autoencoder,encoder,decoder
 
         
@@ -302,7 +306,7 @@ if __name__ == '__main__':
     # transform data
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
-    autoencoder.fit(x_train,x_train,batch_size=128,epochs=15)
+    autoencoder.fit(x_train,x_train,batch_size=256,epochs=15)
 
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
@@ -311,7 +315,7 @@ if __name__ == '__main__':
     #simple_visu(x_train,0)
     #test_points(x_train,random=True,n=4)
     #latent_representation_tSNE(x_train,True)
-    visu_interpo(x_train,nb_iter,args.test,nb_frames,latent_size=25,show=False)
+    visu_interpo(x_train,nb_iter,args.test,nb_frames,scaler,latent_size=25,show=False)
     
     
 
