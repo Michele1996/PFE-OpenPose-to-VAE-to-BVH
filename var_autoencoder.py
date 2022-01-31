@@ -70,16 +70,17 @@ def visu_skel(x_train,index):
     
 def visu_interpo(x_train,nb_iter,nb_frames,test,scaler,latent_size=2,show=True):
     num_files=0
-    np.random.seed(42)
+    np.random_seed(42)
     for o in range (nb_iter):
-        test_image1=x_train[np.random.randint(0,len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
-        test_image2=x_train[np.random.randint(0,len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
+        print(np.random.randint(len(x_train)))
+        print(np.random.randint(len(x_train)))
+        test_image1=x_train[np.random.randint(len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
+        test_image2=x_train[np.random.randint(len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
         encoded_img1=encoder.predict(test_image1)
         encoded_img2=encoder.predict(test_image2)
         #print(decoder.predict(encoded_img1)[0])
         print(scaler.inverse_transform(decoder.predict(encoded_img1)[0]))
         print(scaler.inverse_transform(decoder.predict(encoded_img2)[0]))
-        quit()
         interpolated_images=interpolate_points(encoded_img1.flatten(),encoded_img2.flatten())
         interpolated_orig_images=interpolate_points(test_image1.flatten(),test_image2.flatten())
         predict = (encoder.predict(x_train[::50]))
@@ -272,10 +273,10 @@ def VAE(latent_size=25):
     encoder = tf.keras.Model(inputs = input_layer, outputs = latent, name = 'encoder')
     #encoder.summary()
     input_layer_decoder = tf.keras.layers.Input(shape = encoder.output.shape[1:])
-    decoder_1 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'sigmoid')(input_layer_decoder)
+    decoder_1 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(input_layer_decoder)
     decoder_1 = tf.keras.layers.BatchNormalization()(decoder_1)
     decoder_1 = tf.keras.layers.Dropout(0.3)(decoder_1)
-    decoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(decoder_1)
+    decoder_2 = tf.keras.layers.Dense(encoder_1_size, activation = 'sigmoid')(decoder_1)
     decoder_2 = tf.keras.layers.BatchNormalization()(decoder_2)
     decoder_2 = tf.keras.layers.Dropout(0.3)(decoder_2)
     decoder_1 = tf.keras.layers.Dense(encoder.layers[1].output_shape[-1], activation = tf.keras.activations.linear)(decoder_2)
@@ -306,7 +307,7 @@ if __name__ == '__main__':
     # transform data
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
-    autoencoder.fit(x_train,x_train,batch_size=256,epochs=15)
+    autoencoder.fit(x_train,x_train,batch_size=128,validation_split=0.2,epochs=15)
 
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
