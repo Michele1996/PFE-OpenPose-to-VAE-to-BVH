@@ -10,7 +10,7 @@ def root_mean_squared_error_loss(y_true, y_pred):
      return keras.backend.sqrt(keras.backend.mean(keras.backend.square(y_pred - y_true)))
 
 
-tab = np.load("kp_3.npy",allow_pickle=True)
+tab = np.load("keypints_150_videos.npy",allow_pickle=True)
 train_scenes  = (tab)
 max_seq = 0
 for scene in train_scenes :

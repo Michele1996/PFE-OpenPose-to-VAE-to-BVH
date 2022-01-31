@@ -13,7 +13,7 @@ L = [[17,15],[15,0],[18,16],[16,0],[0,1],[1,2],[2,3],[3,4],[1,5],[5,6],[6,7],[1,
 
 
 
-def load_data(name="kp_3.npy",sequence = False):
+def load_data(name="keypoints_150_videos.npy",sequence = False):
     train_scenes = np.load(name,allow_pickle=True)
     size = 0
     x_train = []
@@ -22,11 +22,12 @@ def load_data(name="kp_3.npy",sequence = False):
         for frame in scene :
             x_train.append(frame)
             
-    x_train = np.array(x_train).reshape((size,50))
+    print(len(train_scenes))
+    x_train = np.array(x_train).reshape((len(train_scenes),50))
     x_train_x = x_train[:,::2]
     x_train_y = x_train[:,1::2]
 
-    x_train = np.zeros((size,25,2))
+    x_train = np.zeros((len(train_scenes),25,2))
     x_train[:,:,0] = x_train_x
     x_train[:,:,1] = x_train_y
         
@@ -64,6 +65,7 @@ def visu_skel(x_train,index):
     for k in L:
         plt.plot([frame[k[0],0],frame[k[1],0]],[-frame[k[0],1],-frame[k[1],1]])
     plt.show()
+
     
 def visu_interpo(x_train,nb_iter,nb_frames,latent_size=2,show=True):
     num_files=0
@@ -107,7 +109,7 @@ def visu_interpo(x_train,nb_iter,nb_frames,latent_size=2,show=True):
             frame = decoder.predict(inter)[0]
             frame = interpolated_orig_images[i]
             #print(frame, len(frame))
-            save_json_for_MocapNET(frame,num_files)
+            save_json_for_MocapNET(decoder.predict(inter)[0],num_files)
             num_files+=1
             if(show and num_images<=10):
                 plt.figure(figsize=(20, 8))
@@ -214,12 +216,15 @@ def create_gif(name = 'mygif.gif'):
 ###################### OUTILS FUNCTIONS ###################################
 
 def save_json_for_MocapNET(frame,index):
-    vector=[]
-    i=0
+    vector=""
     for i in range(len(frame)):
-        vector.append(frame[i])
-        if i%2==0:
-           vector.append(1)
+        if i%2==0 and i!=0:
+           vector+=str(1)+","
+        else:
+           vector+=str(frame[i][0])+","
+           vector+=str(frame[i][1])+","
+    vector=vector[:len(vector)-1]
+    print("VETTORE ",vector)
     data_set = {"version": 1.3, "people": [{"person_id":[-1],"pose_keypoints_2d":vector,"face_keypoints_2d":[],"hand_left_keypoints_2d":[],"hand_right_keypoints_2d":[],"pose_keypoints_3d":[],"face_keypoints_3d":[],"hand_left_keypoints_3d":[],"hand_right_keypoints_3d":[]}]}
     index="0000"+str(index)
     decalage=len(str(index))-5
@@ -231,6 +236,9 @@ def save_json_for_MocapNET(frame,index):
     with open(filename, 'w') as fp:
         json.dump(data_set, fp)
         fp.close()
+    if(not os.path.isdir(path+"\\MocapNET-master")):
+       print("Error, MocapNET not found. Please install it to continue")
+       quit()
     if(not os.path.isdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")):
         os.mkdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")
     os.rename(os.path.join(path, filename), os.path.join(path+"\\MocapNET-master\\OUTPUT_to_BVH",filename))
@@ -277,7 +285,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
-    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kp_3.npy")
+    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="keypoints_150_videos.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
@@ -287,7 +295,7 @@ if __name__ == '__main__':
     # transform data
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
-    autoencoder.fit(x_train,x_train,batch_size=128,epochs=30)
+    autoencoder.fit(x_train,x_train,batch_size=256,epochs=10)
 
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
