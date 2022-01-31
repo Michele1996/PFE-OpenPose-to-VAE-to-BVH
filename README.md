@@ -57,7 +57,7 @@ You will need to clone https://github.com/FORTH-ModelBasedTracker/MocapNET in th
 Now you can execute using a bash linux the following command:
 ```python
 ./convertOpenPoseJSONToCSV --from OUTPUT_to_BVH --size 640 480
-./MocapNET2CSV --from OUTPUT_to_BVH/2dJoints_v1.4.csv --size 640 480 --novisualization:
+./MocapNET2CSV --from OUTPUT_to_BVH/2dJoints_v1.4.csv --size 640 480 --novisualization
 ```
 Where OUTPUT_to_BVH is the output inside MocapNET which contains all the json file created as shown below. All the json files names need to follow the pattern colorFrame_nb_video_XXXXX_keypoints.json.
 <br />For example, you will have in the directory colorFrame_0_00000_keypoints.json, colorFrame_0_00001_keypoints.json etc.
