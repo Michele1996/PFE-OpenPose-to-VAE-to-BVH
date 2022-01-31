@@ -70,7 +70,7 @@ def visu_skel(x_train,index):
     
 def visu_interpo(x_train,nb_iter,nb_frames,test,scaler,latent_size=2,show=True):
     num_files=0
-    np.random_seed(42)
+    np.random.seed(42)
     for o in range (nb_iter):
         print(np.random.randint(len(x_train)))
         print(np.random.randint(len(x_train)))
