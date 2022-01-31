@@ -8,6 +8,7 @@ from tensorflow import keras
 import json
 import os
 import argparse
+from sklearn.model_selection import train_test_split
 
 #skeleton BODY25
 L = [[17,15],[15,0],[18,16],[16,0],[0,1],[1,2],[2,3],[3,4],[1,5],[5,6],[6,7],[1,8],[8,9],[9,10],[10,11],[11,24],[11,22],[22,23],[8,12],[12,13],[13,14],[14,21],[14,19],[19,20]]
@@ -72,15 +73,15 @@ def visu_interpo(x_train,nb_iter,nb_frames,test,scaler,latent_size=2,show=True):
     num_files=0
     np.random.seed(42)
     for o in range (nb_iter):
-        print(np.random.randint(len(x_train)))
-        print(np.random.randint(len(x_train)))
+        #print(np.random.randint(len(x_train)))
+        #print(np.random.randint(len(x_test)))
         test_image1=x_train[np.random.randint(len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
-        test_image2=x_train[np.random.randint(len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
+        test_image2=x_test[np.random.randint(len(x_test))].reshape(1,x_test[0].shape[0],x_test[0].shape[1])
         encoded_img1=encoder.predict(test_image1)
         encoded_img2=encoder.predict(test_image2)
         #print(decoder.predict(encoded_img1)[0])
-        print(scaler.inverse_transform(decoder.predict(encoded_img1)[0]))
-        print(scaler.inverse_transform(decoder.predict(encoded_img2)[0]))
+        #print(scaler.inverse_transform(decoder.predict(encoded_img1)[0]))
+        #print(scaler.inverse_transform(decoder.predict(encoded_img2)[0]))
         interpolated_images=interpolate_points(encoded_img1.flatten(),encoded_img2.flatten())
         interpolated_orig_images=interpolate_points(test_image1.flatten(),test_image2.flatten())
         predict = (encoder.predict(x_train[::50]))
@@ -111,7 +112,7 @@ def visu_interpo(x_train,nb_iter,nb_frames,test,scaler,latent_size=2,show=True):
             
             inter = interpolated_images[i].reshape(1,interpolated_images[i].shape[0])
             frame = decoder.predict(inter)
-            print(scaler.inverse_transform(frame.reshape(25,2)))
+            #print(scaler.inverse_transform(frame.reshape(25,2)))
             save_json_for_MocapNET(scaler.inverse_transform(frame.reshape(25,2)),num_files,test)
             num_files+=1
             if(show and num_images<=10):
@@ -219,12 +220,15 @@ def create_gif(name = 'mygif.gif'):
 ###################### OUTILS FUNCTIONS ###################################
 
 def save_json_for_MocapNET(frame,index,test=False):
-    vector=""
+    vector=[]
+    print("PROCESS FRAME: ",index)
     for i in range(len(frame)):
-           vector+=str(frame[i][0])+","
-           vector+=str(frame[i][1])+",1,"
+           vector.append(round(float(frame[i][0]),2))
+           vector.append(round(float(frame[i][1]),2))
+           vector.append(float(0.80))
     vector=vector[:len(vector)-1]
-    print("VETTORE ",vector)
+    dicto={"pose_keypoints_2d":vector}
+    #print("VETTORE ",vector)
     data_set = {"version": 1.3, "people": [{"person_id":[-1],"pose_keypoints_2d":vector,"face_keypoints_2d":[],"hand_left_keypoints_2d":[],"hand_right_keypoints_2d":[],"pose_keypoints_3d":[],"face_keypoints_3d":[],"hand_left_keypoints_3d":[],"hand_right_keypoints_3d":[]}]}
     index="0000"+str(index)
     decalage=len(str(index))-5
@@ -234,7 +238,7 @@ def save_json_for_MocapNET(frame,index,test=False):
     if os.path.exists(path+"\\MocapNET-master\\OUTPUT_to_BVH\\"+filename):
           os.remove(path+"\\MocapNET-master\\OUTPUT_to_BVH\\"+filename)
     with open(filename, 'w') as fp:
-        json.dump(data_set, fp)
+        json.dump(data_set, fp,separators=(',', ':'))
         fp.close()
     if(test):
         if(not os.path.isdir(path+"\\Test")):
@@ -258,28 +262,41 @@ def root_mean_squared_error_loss(y_true, y_pred):
 def VAE(latent_size=25):
     ## Définition de l'architecture du modèle
     encoder_1_size = 256
-    encoder_1_size_2 = 128
-    encoder_1_size_3 = 64
+    encoder_1_size_1 = 128
+    encoder_1_size_2 = 64
+    encoder_1_size_3 = 32
     latent_size = latent_size
     input_layer = tf.keras.layers.Input(shape = (25,2))
     flattened = tf.keras.layers.Flatten()(input_layer)
     encoder_1 = tf.keras.layers.Dense(encoder_1_size, activation = tf.keras.activations.linear)(flattened)
     encoder_1 = tf.keras.layers.BatchNormalization()(encoder_1)
-    encoder_1 = tf.keras.layers.Dropout(0.3)(encoder_1)
-    encoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'relu')(encoder_1)
+    encoder_1 = tf.keras.layers.Dropout(0.2)(encoder_1)
+    encoder_2 = tf.keras.layers.Dense(encoder_1_size_1, activation = 'relu')(encoder_1)
     encoder_2 = tf.keras.layers.BatchNormalization()(encoder_2)
-    encoder_2 = tf.keras.layers.Dropout(0.3)(encoder_2)
-    latent = tf.keras.layers.Dense(latent_size, activation = 'relu')(encoder_2)
+    encoder_2 = tf.keras.layers.Dropout(0.2)(encoder_2)
+    encoder_3 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'relu')(encoder_2)
+    encoder_3 = tf.keras.layers.BatchNormalization()(encoder_3)
+    encoder_3 = tf.keras.layers.Dropout(0.2)(encoder_3)
+    encoder_4 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'relu')(encoder_3)
+    encoder_4 = tf.keras.layers.BatchNormalization()(encoder_4)
+    encoder_4 = tf.keras.layers.Dropout(0.2)(encoder_4)
+    latent = tf.keras.layers.Dense(latent_size, activation = 'relu')(encoder_4)
     encoder = tf.keras.Model(inputs = input_layer, outputs = latent, name = 'encoder')
     #encoder.summary()
     input_layer_decoder = tf.keras.layers.Input(shape = encoder.output.shape[1:])
-    decoder_1 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(input_layer_decoder)
+    decoder_1 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'sigmoid')(input_layer_decoder)
     decoder_1 = tf.keras.layers.BatchNormalization()(decoder_1)
-    decoder_1 = tf.keras.layers.Dropout(0.3)(decoder_1)
-    decoder_2 = tf.keras.layers.Dense(encoder_1_size, activation = 'sigmoid')(decoder_1)
+    decoder_1 = tf.keras.layers.Dropout(0.2)(decoder_1)
+    decoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(decoder_1)
     decoder_2 = tf.keras.layers.BatchNormalization()(decoder_2)
-    decoder_2 = tf.keras.layers.Dropout(0.3)(decoder_2)
-    decoder_1 = tf.keras.layers.Dense(encoder.layers[1].output_shape[-1], activation = tf.keras.activations.linear)(decoder_2)
+    decoder_2 = tf.keras.layers.Dropout(0.2)(decoder_2)
+    decoder_3 = tf.keras.layers.Dense(encoder_1_size_1, activation = 'sigmoid')(decoder_2)
+    decoder_3 = tf.keras.layers.BatchNormalization()(decoder_3)
+    decoder_3 = tf.keras.layers.Dropout(0.2)(decoder_3)
+    decoder_4 = tf.keras.layers.Dense(encoder_1_size, activation = 'sigmoid')(decoder_3)
+    decoder_4 = tf.keras.layers.BatchNormalization()(decoder_4)
+    decoder_4 = tf.keras.layers.Dropout(0.2)(decoder_4)
+    decoder_1 = tf.keras.layers.Dense(encoder.layers[1].output_shape[-1], activation = tf.keras.activations.linear)(decoder_4)
     constructed = tf.keras.layers.Reshape(x_train.shape[1:])(decoder_1)
     decoder = tf.keras.Model(inputs = input_layer_decoder, outputs = constructed, name= 'decoder')
     #decoder.summary()
@@ -287,7 +304,7 @@ def VAE(latent_size=25):
     autoencoder = tf.keras.Model(inputs = encoder.input, outputs = decoder(encoder.output))
     autoencoder.summary()
 
-    autoencoder.compile(optimizer="adam",loss=root_mean_squared_error_loss, metrics=[keras.metrics.RootMeanSquaredError(name='rmse')])
+    autoencoder.compile(optimizer="adam",loss="mse", metrics=["accuracy"])
     return autoencoder,encoder,decoder
 
         
@@ -307,8 +324,15 @@ if __name__ == '__main__':
     # transform data
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
-    autoencoder.fit(x_train,x_train,batch_size=128,validation_split=0.2,epochs=15)
-
+    x_test=x_train[0:5]
+    x_train=x_train[6:]
+    history=autoencoder.fit(x_train,x_train,batch_size=256,validation_split=0.2,shuffle=True,epochs=20)
+    
+    plt.figure()
+    plt.plot(history.history['loss'], label='loss')
+    plt.plot(history.history['val_loss'], label='val_loss')
+    plt.legend()
+    plt.show()
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
     decoder.save("./MODEL_25kp_decoder")
