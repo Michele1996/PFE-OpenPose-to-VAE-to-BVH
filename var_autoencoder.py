@@ -67,15 +67,13 @@ def visu_skel(x_train,index):
     plt.show()
 
     
-def visu_interpo(x_train,nb_iter,nb_frames,latent_size=2,show=True):
+def visu_interpo(x_train,nb_iter,nb_frames,test,latent_size=2,show=True):
     num_files=0
     for o in range (nb_iter):
         test_image1=x_train[np.random.randint(0,len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
         test_image2=x_train[np.random.randint(0,len(x_train))].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
         encoded_img1=encoder.predict(test_image1)
         encoded_img2=encoder.predict(test_image2)
-        print("WOW")
-        print(encoded_img1)
         interpolated_images=interpolate_points(encoded_img1.flatten(),encoded_img2.flatten())
         interpolated_orig_images=interpolate_points(test_image1.flatten(),test_image2.flatten())
         predict = (encoder.predict(x_train[::50]))
@@ -109,7 +107,7 @@ def visu_interpo(x_train,nb_iter,nb_frames,latent_size=2,show=True):
             frame = decoder.predict(inter)[0]
             frame = interpolated_orig_images[i]
             #print(frame, len(frame))
-            save_json_for_MocapNET(decoder.predict(inter)[0],num_files)
+            save_json_for_MocapNET(decoder.predict(inter)[0],num_files,test)
             num_files+=1
             if(show and num_images<=10):
                 plt.figure(figsize=(20, 8))
@@ -215,7 +213,7 @@ def create_gif(name = 'mygif.gif'):
         
 ###################### OUTILS FUNCTIONS ###################################
 
-def save_json_for_MocapNET(frame,index):
+def save_json_for_MocapNET(frame,index,test=False):
     vector=""
     for i in range(len(frame)):
         if i%2==0 and i!=0:
@@ -236,12 +234,19 @@ def save_json_for_MocapNET(frame,index):
     with open(filename, 'w') as fp:
         json.dump(data_set, fp)
         fp.close()
-    if(not os.path.isdir(path+"\\MocapNET-master")):
-       print("Error, MocapNET not found. Please install it to continue")
-       quit()
-    if(not os.path.isdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")):
-        os.mkdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")
-    os.rename(os.path.join(path, filename), os.path.join(path+"\\MocapNET-master\\OUTPUT_to_BVH",filename))
+    if(test):
+        if(not os.path.isdir(path+"\\Test")):
+            os.mkdir(path+"\\Test")
+        if(not os.path.isdir(path+"\\Test\\OUTPUT_to_BVH")):
+            os.mkdir(path+"\\Test\\OUTPUT_to_BVH")
+        os.rename(os.path.join(path, filename), os.path.join(path+"\\Test\\OUTPUT_to_BVH",filename))
+    else:
+        if(not os.path.isdir(path+"\\MocapNET-master")):
+           print("Error, MocapNET not found. Please install it to continue")
+           quit()
+        if(not os.path.isdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")):
+            os.mkdir(path+"\\MocapNET-master\\OUTPUT_to_BVH")
+        os.rename(os.path.join(path, filename), os.path.join(path+"\\MocapNET-master\\OUTPUT_to_BVH",filename))
 
 def VAE(latent_size=25):
     ## Définition de l'architecture du modèle
@@ -285,17 +290,19 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
+    parser.add_argument("test", help="path to data",type=bool,nargs='?',default=False)
     parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="keypoints_150_videos.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
+    save_test=args.test
     x_train=load_data(name =args.data_file_location)
-    autoencoder,encoder,decoder = VAE(latent_size = 25)
+    autoencoder,encoder,decoder = VAE(latent_size = 2)
     scaler = MinMaxScaler()
     # transform data
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
-    autoencoder.fit(x_train,x_train,batch_size=256,epochs=10)
+    autoencoder.fit(x_train,x_train,batch_size=128,epochs=15)
 
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
@@ -304,7 +311,7 @@ if __name__ == '__main__':
     #simple_visu(x_train,0)
     #test_points(x_train,random=True,n=4)
     #latent_representation_tSNE(x_train,True)
-    visu_interpo(x_train,nb_iter,nb_frames,latent_size=25,show=False)
+    visu_interpo(x_train,nb_iter,args.test,nb_frames,latent_size=25,show=False)
     
     
 
