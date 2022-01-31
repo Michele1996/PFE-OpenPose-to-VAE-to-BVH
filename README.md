@@ -46,9 +46,9 @@ python create_npy_all_video.py
 ```
 Now you can execute 
 ```python
-python var_autoencoder nb_iter nb_frames
+python var_autoencoder nb_iter nb_frames save_test path_to_data
 ```
-Where nb_iter is the number of itereration creation of nb_frames frames by encoder <br />
+Where nb_iter is the number of itereration creation of nb_frames frames by encoder , save_test is a boolean and if is True, than even if you don't have MocapNET installed the generated data will be saved anyway, and path_to_data is the path to .npy file containing the OpenPose output. (you can avoid give as argument save_test and path_to_data, they are set by default on False, and path to keypoints_150_videos.npy <br />
 To run the VAE and to generate data (and also visualize. if you need check the vae_autoencoder script) and save them in the same format as OpenPose output (we use all the 25 keypoints) <br />
 The output of OpenPose is a json that contains among other information the x,y,confiance_score data for each of the 25 keypoints. We need to add to the encoder generated data, the confiance_score (just to make it work with MocapNET) so we can put it to 1 for all the keypoints
 
