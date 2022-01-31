@@ -77,7 +77,7 @@ Now you have from a 2d Keypoints data , a 3D animation. You can check on Blender
 You can also visualize the animation on http://lo-th.github.io/olympe/BVH_player.html which is a visualization-only tool
 
 ## Conversion of Numpy Array to BVH
-In case of you have a numpy array with shape (nb_frames,nb_keypoints,3) you can use the ffollowing script to convert your numpy_array in a bvh animation
+In case of you have a numpy array with shape (nb_frames,nb_keypoints,3) you can use the following script to convert your numpy_array in a bvh animation
 ```python
 python numpy_to_bvh
 ```
