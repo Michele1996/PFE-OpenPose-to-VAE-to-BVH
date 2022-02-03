@@ -3,12 +3,15 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import PCA
+from sklearn.metrics import mean_squared_error
+from math import sqrt
 from sklearn.manifold import TSNE
 from tensorflow import keras
 import json
 import os
 import argparse
 from sklearn.model_selection import train_test_split
+from scipy.stats import pearsonr
 
 #skeleton BODY25
 L = [[17,15],[15,0],[18,16],[16,0],[0,1],[1,2],[2,3],[3,4],[1,5],[5,6],[6,7],[1,8],[8,9],[9,10],[10,11],[11,24],[11,22],[22,23],[8,12],[12,13],[13,14],[14,21],[14,19],[19,20]]
@@ -259,28 +262,29 @@ def save_json_for_MocapNET(frame,index,test=False):
 def root_mean_squared_error_loss(y_true, y_pred):
      return keras.backend.sqrt(keras.backend.mean(keras.backend.square(y_pred - y_true)))
 
-def VAE(latent_size=25):
+def VAE(latent_size=2):
     ## Définition de l'architecture du modèle
-    encoder_1_size = 256
-    encoder_1_size_1 = 128
-    encoder_1_size_2 = 64
-    encoder_1_size_3 = 32
+    encoder_1_size = 512
+    encoder_1_size_1 = 256
+    encoder_1_size_2 = 128
+    encoder_1_size_3 = 64
+    encoder_1_size_4 = 32
     latent_size = latent_size
     input_layer = tf.keras.layers.Input(shape = (25,2))
     flattened = tf.keras.layers.Flatten()(input_layer)
     encoder_1 = tf.keras.layers.Dense(encoder_1_size, activation = tf.keras.activations.linear)(flattened)
     encoder_1 = tf.keras.layers.BatchNormalization()(encoder_1)
     encoder_1 = tf.keras.layers.Dropout(0.2)(encoder_1)
-    encoder_2 = tf.keras.layers.Dense(encoder_1_size_1, activation = 'relu')(encoder_1)
+    encoder_2 = tf.keras.layers.Dense(encoder_1_size_1,activation = 'relu')(encoder_1)
     encoder_2 = tf.keras.layers.BatchNormalization()(encoder_2)
     encoder_2 = tf.keras.layers.Dropout(0.2)(encoder_2)
-    encoder_3 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'relu')(encoder_2)
+    encoder_3 = tf.keras.layers.Dense(encoder_1_size_2,activation = 'relu')(encoder_2)
     encoder_3 = tf.keras.layers.BatchNormalization()(encoder_3)
     encoder_3 = tf.keras.layers.Dropout(0.2)(encoder_3)
-    encoder_4 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'relu')(encoder_3)
+    encoder_4 = tf.keras.layers.Dense(encoder_1_size_3,activation = 'relu')(encoder_3)
     encoder_4 = tf.keras.layers.BatchNormalization()(encoder_4)
     encoder_4 = tf.keras.layers.Dropout(0.2)(encoder_4)
-    latent = tf.keras.layers.Dense(latent_size, activation = 'relu')(encoder_4)
+    latent = tf.keras.layers.Dense(latent_size)(encoder_4)
     encoder = tf.keras.Model(inputs = input_layer, outputs = latent, name = 'encoder')
     #encoder.summary()
     input_layer_decoder = tf.keras.layers.Input(shape = encoder.output.shape[1:])
@@ -289,7 +293,7 @@ def VAE(latent_size=25):
     decoder_1 = tf.keras.layers.Dropout(0.2)(decoder_1)
     decoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(decoder_1)
     decoder_2 = tf.keras.layers.BatchNormalization()(decoder_2)
-    decoder_2 = tf.keras.layers.Dropout(0.2)(decoder_2)
+    decoder_2 = tf.keras.layers.Dropout(0.5)(decoder_2)
     decoder_3 = tf.keras.layers.Dense(encoder_1_size_1, activation = 'sigmoid')(decoder_2)
     decoder_3 = tf.keras.layers.BatchNormalization()(decoder_3)
     decoder_3 = tf.keras.layers.Dropout(0.2)(decoder_3)
@@ -303,8 +307,8 @@ def VAE(latent_size=25):
 
     autoencoder = tf.keras.Model(inputs = encoder.input, outputs = decoder(encoder.output))
     autoencoder.summary()
-
-    autoencoder.compile(optimizer="adam",loss="mse", metrics=["accuracy"])
+    adam=keras.optimizers.Adam(lr=0.001)
+    autoencoder.compile(optimizer=adam,loss="mse", metrics=["accuracy"])
     return autoencoder,encoder,decoder
 
         
@@ -319,28 +323,46 @@ if __name__ == '__main__':
     nb_iter=args.nb_iter
     save_test=args.test
     x_train=load_data(name =args.data_file_location)
-    autoencoder,encoder,decoder = VAE(latent_size = 2)
+    autoencoder,encoder,decoder = VAE(latent_size = 25)
     scaler = MinMaxScaler()
     # transform data
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
-    x_test=x_train[0:5]
-    x_train=x_train[6:]
-    history=autoencoder.fit(x_train,x_train,batch_size=256,validation_split=0.2,shuffle=True,epochs=20)
+    print(len(x_train))
+    x_test=x_train[0:14517]
+    x_train=x_train[14518:]
+    history=autoencoder.fit(x_train,x_train,batch_size=128,validation_split=0.2,shuffle=True,epochs=150)
     
-    plt.figure()
-    plt.plot(history.history['loss'], label='loss')
-    plt.plot(history.history['val_loss'], label='val_loss')
-    plt.legend()
-    plt.show()
+    #plt.figure()
+    #plt.plot(history.history['loss'], label='loss')
+    #plt.plot(history.history['val_loss'], label='val_loss')
+    #plt.legend()
+    #plt.show()
     autoencoder.save("./MODEL_25kp")
     encoder.save("./MODEL_25kp_encoder")
     decoder.save("./MODEL_25kp_decoder")
     
-    #simple_visu(x_train,0)
+    test_image=x_train[0].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
+    encoded_img1=encoder.predict(test_image)
+    visu_skel(decoder.predict(encoded_img1),0)
+    visu_skel(x_train,0)
+    
+    y_actual=decoder.predict(encoded_img1)[0]
+    y_pred=x_train[0]
+    print("RMSE:",sqrt(mean_squared_error(y_actual, y_pred)))
+    
+
+    test_image=x_test[0].reshape(1,x_test[0].shape[0],x_train[0].shape[1])
+    encoded_img1=encoder.predict(test_image)
+    visu_skel(decoder.predict(encoded_img1),0)
+    visu_skel(x_test,0)
+    
+    y_actual=decoder.predict(encoded_img1)[0]
+    y_pred=x_test[0]
+    print("RMSE:",sqrt(mean_squared_error(y_actual, y_pred)))
     #test_points(x_train,random=True,n=4)
     #latent_representation_tSNE(x_train,True)
-    visu_interpo(x_train,nb_iter,args.test,nb_frames,scaler,latent_size=25,show=False)
+    #visu_interpo(x_train,nb_iter,args.test,nb_frames,scaler,latent_size=25,show=False)
     
     
 
