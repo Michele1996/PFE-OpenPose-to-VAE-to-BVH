@@ -13,7 +13,7 @@ The project is split in 3 phases:
 * Reconstruct json file as OpenPose output and use MocapNET to have bvh files 
 
 <p align="center">
-  <img src="https://github.com/Michele1996/PFE-OpenPose-to-VAE-to-BVH/blob/main/images/compare_bvh.JPG" width="800" height="600" alt="Schema real samples and reconstructions"/>
+  <img src="https://github.com/Michele1996/PFE-OpenPose-to-VAE-to-BVH/blob/main/images/compare_bvh.jpg" width="800" height="600" alt="Schema real samples and reconstructions"/>
 </p>
 
 
