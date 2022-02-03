@@ -15,6 +15,9 @@ The project is split in 3 phases:
 <p align="center">
   <img src="https://github.com/Michele1996/PFE-OpenPose-to-VAE-to-BVH/blob/main/images/compare.JPG" width="800" height="600" alt="Schema real samples and reconstructions"/>
 </p>
+<p align="center">
+  <img src="https://github.com/Michele1996/PFE-OpenPose-to-VAE-to-BVH/blob/main/images/motion_bvh.JPG" alt="Schema real samples and reconstructions"/>
+</p>
 ## Generate Data
 First of all go to the directory and run the batch file
 ```batch
