@@ -1,4 +1,4 @@
-# PFE-OpenPose-to-VAE-toBVH
+# PFE-OpenPose-to-VAE-to-BVH
 
 The aim of the project is to generate gestures using VAE trained using keypoints acquired using OpenPose on TEDx videos thata were splitted in scenes
 The project is split in 3 phases:
