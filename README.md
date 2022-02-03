@@ -12,6 +12,9 @@ The project is split in 3 phases:
 * Generate Data using the encoder
 * Reconstruct json file as OpenPose output and use MocapNET to have bvh files 
 
+<p align="center">
+  <img src="https://github.com/Michele1996/PFE-OpenPose-to-VAE-to-BVH/blob/main/images/compare.JPG" width="800" height="600" alt="Schema real samples and reconstructions"/>
+</p>
 ## Generate Data
 First of all go to the directory and run the batch file
 ```batch
