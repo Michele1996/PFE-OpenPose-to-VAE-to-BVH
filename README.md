@@ -92,6 +92,7 @@ In this way we have a smooth bvh for GRETA. To modify the bvh you can use:
 ```python
 python fix_bvh_for_GRETA.py <input_file>
 ```
+<br/>
 ## Conversion of Numpy Array to BVH
 In case of you have a numpy array with shape (nb_frames,nb_keypoints,3) you can use the following script to convert your numpy_array in a bvh animation
 ```python
