@@ -5,7 +5,7 @@ The project is split in 3 phases:
 * Generate de data from TEDx videos
   * Use youtube_dl to download the videos
   * Use then pyscenedetect to split them in scenes
-  * Filter the scenes (statique scenes)
+  * Apply a filter the scenes (static scenes)
 * Apply OpenPose on the scenes
 * Filter the keypoints (back camera, body not well oriented, body parts missing....)
 * Use the outputs to train a VAE
