@@ -82,11 +82,12 @@ Now you have from a 2d Keypoints data , a 3D animation. You can check on Blender
 You can also visualize the animation on http://lo-th.github.io/olympe/BVH_player.html which is a visualization-only tool
 
 ## Fix BVH file for GRETA Animations
-The bvh file generated needs to be modified to be used in GRETA. First of all , the name of some joints needs to be modified then the right and left arm are switched
+The bvh file generated needs to be modified to be used in GRETA. First of all , the name of some joints needs to be modified then the right and left arm are switched<br/>
 Also to have a smooth animation we apply:
 * slerp
 * median filter
 * butterworth filter (using https://github.com/vdbalbom/BVHsmooth)
+<br/>
 In this way we have a smooth bvh for GRETA. To modify the bvh you can use:
 ```python
 python fix_bvh_for_GRETA.py <input_file>
