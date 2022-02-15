@@ -18,7 +18,7 @@ L = [[17,15],[15,0],[18,16],[16,0],[0,1],[1,2],[2,3],[3,4],[1,5],[5,6],[6,7],[1,
 
 
 
-def load_data(name="keypoints_150_videos.npy",sequence = False):
+def load_data(name="kpoutput_test_3.npy",sequence = False):
     train_scenes = np.load(name,allow_pickle=True)
     size = 0
     x_train = []
@@ -317,7 +317,7 @@ if __name__ == '__main__':
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
     parser.add_argument("test", help="path to data",type=bool,nargs='?',default=False)
-    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="keypoints_150_videos.npy")
+    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_3.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
@@ -329,9 +329,9 @@ if __name__ == '__main__':
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
     print(len(x_train))
-    x_test=x_train[0:14517]
-    x_train=x_train[14518:]
-    history=autoencoder.fit(x_train,x_train,batch_size=128,validation_split=0.2,shuffle=True,epochs=150)
+    x_test=x_train[0:35]
+    x_train=x_train[36:]
+    history=autoencoder.fit(x_train,x_train,batch_size=64,validation_split=0.2,shuffle=True,epochs=100)
     
     #plt.figure()
     #plt.plot(history.history['loss'], label='loss')
@@ -344,8 +344,8 @@ if __name__ == '__main__':
     
     test_image=x_train[0].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
     encoded_img1=encoder.predict(test_image)
-    visu_skel(decoder.predict(encoded_img1),0)
-    visu_skel(x_train,0)
+    #visu_skel(decoder.predict(encoded_img1),0)
+    #visu_skel(x_train,0)
     
     y_actual=decoder.predict(encoded_img1)[0]
     y_pred=x_train[0]
@@ -354,8 +354,8 @@ if __name__ == '__main__':
 
     test_image=x_test[0].reshape(1,x_test[0].shape[0],x_train[0].shape[1])
     encoded_img1=encoder.predict(test_image)
-    visu_skel(decoder.predict(encoded_img1),0)
-    visu_skel(x_test,0)
+    #visu_skel(decoder.predict(encoded_img1),0)
+    #visu_skel(x_test,0)
     
     y_actual=decoder.predict(encoded_img1)[0]
     y_pred=x_test[0]
@@ -363,7 +363,12 @@ if __name__ == '__main__':
     #test_points(x_train,random=True,n=4)
     #latent_representation_tSNE(x_train,True)
     #visu_interpo(x_train,nb_iter,args.test,nb_frames,scaler,latent_size=25,show=False)
-    
-    
+    index=0
+    for i in range(len(x_test)):
+         encoded_img1=encoder.predict(x_test[i].reshape(1,x_test[0].shape[0],x_test[0].shape[1]))
+         print(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2)))
+         save_json_for_MocapNET(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2)),index,True)
+         index+=1
+         
 
 
