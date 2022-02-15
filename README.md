@@ -67,6 +67,10 @@ Now you can execute using a bash linux the following command:
 Where OUTPUT_to_BVH is the output inside MocapNET which contains all the json file created as shown below. All the json files names need to follow the pattern colorFrame_nb_video_XXXXX_keypoints.json.
 <br />For example, you will have in the directory colorFrame_0_00000_keypoints.json, colorFrame_0_00001_keypoints.json etc.
 <br />
+To rename all the files in a folder correctly you can use:
+```python
+python renam_files_for_MocapNET <input_folder>
+```
 You can also run 
 ```batch
 from_vae_to_json_to_bvh.bat
