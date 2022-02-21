@@ -1,0 +1,1056 @@
+HIERARCHY
+ROOT hip
+{
+  OFFSET 0 0 0
+  CHANNELS 6 Xposition Yposition Zposition Zrotation Yrotation Xrotation
+  JOINT Chest
+  {
+    OFFSET 0 20.6881 -0.73152
+    CHANNELS 3 Zrotation Xrotation Yrotation
+    JOINT Chest2
+    {
+      OFFSET 0 11.7043 -0.48768
+      CHANNELS 3 Zrotation Xrotation Yrotation
+      JOINT Neck
+      {
+          OFFSET 0 22.1894 -2.19456
+          CHANNELS 3 Zrotation Xrotation Yrotation 
+          JOINT neck1
+          {
+            OFFSET 0.000000 5.364170 1.574630
+            CHANNELS 3 Zrotation Xrotation Yrotation 
+            JOINT Head
+            {
+              OFFSET 0.000000 5.364141 1.574630
+              CHANNELS 3 Zrotation Xrotation Yrotation 
+              JOINT __jaw
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT jaw
+                {
+                  OFFSET 0.000000 -13.499860 2.500710
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT special04
+                  {
+                    OFFSET -0.000000 -6.835370 4.375500
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT oris02
+                    {
+                      OFFSET 0.000000 1.711150 2.820850
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT oris01
+                      {
+                        OFFSET -0.000000 0.972390 0.845650
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET 0.000000 1.162291 0.607091
+                        }
+                      }
+                    }
+                    JOINT oris06.l
+                    {
+                      OFFSET 0.000000 1.711150 2.820850
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT oris07.l
+                      {
+                        OFFSET 1.168850 0.445180 0.506110
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET 0.450611 1.195178 0.204519
+                        }
+                      }
+                    }
+                    JOINT oris06.r
+                    {
+                      OFFSET 0.000000 1.711150 2.820850
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT oris07.r
+                      {
+                        OFFSET -1.168850 0.445180 0.506110
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET -0.450611 1.195173 0.204519
+                        }
+                      }
+                    }
+                  }
+                  JOINT tongue00
+                  {
+                    OFFSET -0.000000 -6.835370 4.375500
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT tongue01
+                    {
+                      OFFSET 0.000000 3.973650 -3.762340
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT tongue02
+                      {
+                        OFFSET 0.000000 0.429760 2.924710
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT tongue03
+                        {
+                          OFFSET 0.000000 0.018530 2.059010
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          JOINT __tongue04
+                          {
+                            OFFSET 0.000000 -0.440240 0.838860
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            JOINT tongue04
+                            {
+                              OFFSET 0.000000 0.000000 0.000000
+                              CHANNELS 3 Zrotation Xrotation Yrotation 
+                              End Site
+                              {
+                                OFFSET 0.000000 -0.440230 0.838860
+                              }
+                            }
+                          }
+                          JOINT tongue07.l
+                          {
+                            OFFSET 0.000000 -0.440240 0.838860
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            End Site
+                            {
+                              OFFSET 1.160923 -0.331531 0.018227
+                            }
+                          }
+                          JOINT tongue07.r
+                          {
+                            OFFSET 0.000000 -0.440240 0.838860
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            End Site
+                            {
+                              OFFSET -1.160922 -0.331531 0.018227
+                            }
+                          }
+                        }
+                        JOINT tongue06.l
+                        {
+                          OFFSET 0.000000 0.018530 2.059010
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET 1.644752 -0.526075 -0.203281
+                          }
+                        }
+                        JOINT tongue06.r
+                        {
+                          OFFSET 0.000000 0.018530 2.059010
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET -1.644752 -0.526075 -0.203282
+                          }
+                        }
+                      }
+                      JOINT tongue05.l
+                      {
+                        OFFSET 0.000000 0.429760 2.924710
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET 1.971028 -0.388618 0.239206
+                        }
+                      }
+                      JOINT tongue05.r
+                      {
+                        OFFSET 0.000000 0.429760 2.924710
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET -1.971028 -0.388618 0.239205
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __levator02.l
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT levator02.l
+                {
+                  OFFSET 0.313580 -11.321120 11.599360
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT levator03.l
+                  {
+                    OFFSET 1.681690 -1.563730 -1.357570
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT levator04.l
+                    {
+                      OFFSET 0.504730 -1.676760 -0.058160
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT levator05.l
+                      {
+                        OFFSET 0.145440 -1.643170 -0.225470
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET -0.310116 -0.760198 -0.121474
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __levator02.r
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT levator02.r
+                {
+                  OFFSET -0.313580 -11.321120 11.599360
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT levator03.r
+                  {
+                    OFFSET -1.681690 -1.563740 -1.357570
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT levator04.r
+                    {
+                      OFFSET -0.504730 -1.676750 -0.058160
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT levator05.r
+                      {
+                        OFFSET -0.145440 -1.643170 -0.225470
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        End Site
+                        {
+                          OFFSET 0.310116 -0.760193 -0.121474
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __special01
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT special01
+                {
+                  OFFSET -0.000000 -14.026930 -5.716970
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT oris04.l
+                  {
+                    OFFSET -0.000000 -0.492640 17.312620
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT oris03.l
+                    {
+                      OFFSET 1.215520 -0.627430 -0.393050
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET 0.288776 -0.560899 -0.149645
+                      }
+                    }
+                  }
+                  JOINT oris04.r
+                  {
+                    OFFSET -0.000000 -0.492640 17.312620
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT oris03.r
+                    {
+                      OFFSET -1.215520 -0.627440 -0.393050
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET -0.288776 -0.560894 -0.149645
+                      }
+                    }
+                  }
+                  JOINT oris06
+                  {
+                    OFFSET -0.000000 -0.492640 17.312620
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT oris05
+                    {
+                      OFFSET -0.000000 -0.486000 0.000950
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET 0.000000 -0.630493 0.197635
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __special03
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT special03
+                {
+                  OFFSET 0.000000 -13.499860 2.500710
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT __levator06.l
+                  {
+                    OFFSET -0.000000 1.035800 10.090229
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT levator06.l
+                    {
+                      OFFSET 0.522240 -0.615720 0.045900
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET 1.107505 -0.131898 -2.142227
+                      }
+                    }
+                  }
+                  JOINT __levator06.r
+                  {
+                    OFFSET -0.000000 1.035800 10.090229
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT levator06.r
+                    {
+                      OFFSET -0.522240 -0.615730 0.045900
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET -1.107506 -0.131893 -2.142227
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT special06.l
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT special05.l
+                {
+                  OFFSET 2.108890 0.153870 5.595070
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT eye.l
+                  {
+                    OFFSET 0.857170 -10.254801 2.414670
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    End Site
+                    {
+                      OFFSET 0.111609 0.006490 4.051424
+                    }
+                  }
+                  JOINT orbicularis03.l
+                  {
+                    OFFSET 0.857170 -10.254801 2.414670
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    End Site
+                    {
+                      OFFSET 0.097789 1.146431 3.788029
+                    }
+                  }
+                  JOINT orbicularis04.l
+                  {
+                    OFFSET 0.857170 -10.254801 2.414670
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    End Site
+                    {
+                      OFFSET 0.113609 -1.130505 3.863064
+                    }
+                  }
+                }
+              }
+              JOINT special06.r
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT special05.r
+                {
+                  OFFSET -2.108890 0.153870 5.595070
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT eye.r
+                  {
+                    OFFSET -0.857170 -10.254801 2.414670
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    End Site
+                    {
+                      OFFSET -0.111609 0.006490 4.051424
+                    }
+                  }
+                  JOINT orbicularis03.r
+                  {
+                    OFFSET -0.857170 -10.254801 2.414670
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    End Site
+                    {
+                      OFFSET -0.097789 1.146431 3.788029
+                    }
+                  }
+                  JOINT orbicularis04.r
+                  {
+                    OFFSET -0.857170 -10.254801 2.414670
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    End Site
+                    {
+                      OFFSET -0.113609 -1.130505 3.863064
+                    }
+                  }
+                }
+              }
+              JOINT __temporalis01.l
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT temporalis01.l
+                {
+                  OFFSET 6.332510 -9.444281 6.595120
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT oculi02.l
+                  {
+                    OFFSET -0.804920 0.053010 1.621140
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT oculi01.l
+                    {
+                      OFFSET -2.161570 1.690970 2.142660
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET -1.740622 0.281157 0.647323
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __temporalis01.r
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT temporalis01.r
+                {
+                  OFFSET -6.332510 -9.444281 6.595120
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT oculi02.r
+                  {
+                    OFFSET 0.804920 0.053010 1.621140
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT oculi01.r
+                    {
+                      OFFSET 2.161570 1.690970 2.142660
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET 1.740622 0.281157 0.647323
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __temporalis02.l
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT temporalis02.l
+                {
+                  OFFSET 6.377600 -11.680510 6.235180
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT risorius02.l
+                  {
+                    OFFSET -0.814250 0.451130 1.721730
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT risorius03.l
+                    {
+                      OFFSET -0.649710 -2.514660 0.612550
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET 0.479556 -1.760402 -1.642659
+                      }
+                    }
+                  }
+                }
+              }
+              JOINT __temporalis02.r
+              {
+                OFFSET 0.000000 13.604700 -0.502080
+                CHANNELS 3 Zrotation Xrotation Yrotation 
+                JOINT temporalis02.r
+                {
+                  OFFSET -6.377600 -11.680510 6.235180
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT risorius02.r
+                  {
+                    OFFSET 0.814250 0.451130 1.721730
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT risorius03.r
+                    {
+                      OFFSET 0.649710 -2.514660 0.612550
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      End Site
+                      {
+                        OFFSET -0.479556 -1.760402 -1.642659
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      JOINT RightCollar
+      {
+        OFFSET -2.68224 19.2634 -4.8768
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT RightShoulder
+        {
+          OFFSET -8.77824 -1.95073 1.46304
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT RightElbow
+          {
+            OFFSET -28.1742 -1.7115 0.48768
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            JOINT RightWrist
+            {
+                  OFFSET -21.049400 0.002190 -0.634230
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT metacarpal1.r
+                  {
+                    OFFSET -2.815680 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT finger2-1.r
+                    {
+                      OFFSET -6.292930 0.272380 2.520090
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger2-2.r
+                      {
+                        OFFSET -2.310530 -0.320530 -0.060510
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger2-3.r
+                        {
+                          OFFSET -2.051030 -0.295400 -0.164890
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET -2.376838 -0.681367 -0.183877
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT metacarpal2.r
+                  {
+                    OFFSET -2.815680 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT finger3-1.r
+                    {
+                      OFFSET -6.313640 0.626130 0.318530
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger3-2.r
+                      {
+                        OFFSET -3.015730 -0.589480 -0.088540
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger3-3.r
+                        {
+                          OFFSET -2.482120 -0.426280 0.076670
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET -2.344174 -0.731969 0.003260
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT __metacarpal3.r
+                  {
+                    OFFSET -2.815680 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT metacarpal3.r
+                    {
+                      OFFSET -0.606080 -0.162120 -1.874870
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger4-1.r
+                      {
+                        OFFSET -5.355730 0.702040 0.402510
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger4-2.r
+                        {
+                          OFFSET -2.643900 -0.485530 -0.117520
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          JOINT finger4-3.r
+                          {
+                            OFFSET -2.215850 -0.353160 0.066220
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            End Site
+                            {
+                              OFFSET -2.350273 -0.621223 -0.046375
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT __metacarpal4.r
+                  {
+                    OFFSET -2.815680 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT metacarpal4.r
+                    {
+                      OFFSET -0.606080 -0.162120 -1.874870
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger5-1.r
+                      {
+                        OFFSET -4.761700 0.175470 -1.109590
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger5-2.r
+                        {
+                          OFFSET -1.916360 -0.173360 -0.146170
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          JOINT finger5-3.r
+                          {
+                            OFFSET -1.411290 -0.108670 -0.020110
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            End Site
+                            {
+                              OFFSET -1.799226 -0.102363 -0.078601
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT __rthumb
+                  {
+                    OFFSET -2.815680 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT rthumb
+                    {
+                      OFFSET -0.283040 -0.142720 1.950690
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger1-2.r
+                      {
+                        OFFSET -0.915590 -2.152150 1.546760
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger1-3.r
+                        {
+                          OFFSET -3.213140 -0.470060 0.247480
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET -2.521224 -0.161543 -0.511272
+                          }
+                        }
+                      }
+                    }
+                  }
+            }
+          }
+        }
+      }
+      JOINT LeftCollar
+      {
+        OFFSET 2.68224 19.2634 -4.8768
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT LeftShoulder
+        {
+          OFFSET 8.77824 -1.95073 1.46304
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          JOINT LeftElbow
+          {
+            OFFSET 28.1742 -1.7115 0.48768
+            CHANNELS 3 Zrotation Xrotation Yrotation
+            JOINT LeftWrist
+            {
+             
+                  OFFSET 21.049408 0.002200 -0.634230
+                  CHANNELS 3 Zrotation Xrotation Yrotation 
+                  JOINT metacarpal1.l
+                  {
+                    OFFSET 2.815670 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT finger2-1.l
+                    {
+                      OFFSET 6.292930 0.272390 2.520090
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger2-2.l
+                      {
+                        OFFSET 2.310530 -0.320520 -0.060510
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger2-3.l
+                        {
+                          OFFSET 2.051030 -0.295400 -0.164880
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET 2.376823 -0.681367 -0.183876
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT metacarpal2.l
+                  {
+                    OFFSET 2.815670 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT finger3-1.l
+                    {
+                      OFFSET 6.313640 0.626120 0.318530
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger3-2.l
+                      {
+                        OFFSET 3.015730 -0.589470 -0.088540
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger3-3.l
+                        {
+                          OFFSET 2.482120 -0.426270 0.076670
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET 2.344170 -0.731978 0.003260
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT __metacarpal3.l
+                  {
+                    OFFSET 2.815670 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT metacarpal3.l
+                    {
+                      OFFSET 0.606080 -0.162120 -1.874870
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger4-1.l
+                      {
+                        OFFSET 5.355730 0.702050 0.402510
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger4-2.l
+                        {
+                          OFFSET 2.643900 -0.485530 -0.117510
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          JOINT finger4-3.l
+                          {
+                            OFFSET 2.215840 -0.353150 0.066210
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            End Site
+                            {
+                              OFFSET 2.350273 -0.621228 -0.046377
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT __metacarpal4.l
+                  {
+                    OFFSET 2.815670 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT metacarpal4.l
+                    {
+                      OFFSET 0.606080 -0.162120 -1.874870
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger5-1.l
+                      {
+                        OFFSET 4.761700 0.175480 -1.109600
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger5-2.l
+                        {
+                          OFFSET 1.916350 -0.173360 -0.146170
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          JOINT finger5-3.l
+                          {
+                            OFFSET 1.411290 -0.108670 -0.020110
+                            CHANNELS 3 Zrotation Xrotation Yrotation 
+                            End Site
+                            {
+                              OFFSET 1.799216 -0.102372 -0.078600
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  JOINT __lthumb
+                  {
+                    OFFSET 2.815670 -0.279180 0.531660
+                    CHANNELS 3 Zrotation Xrotation Yrotation 
+                    JOINT lthumb
+                    {
+                      OFFSET 0.283040 -0.142710 1.950690
+                      CHANNELS 3 Zrotation Xrotation Yrotation 
+                      JOINT finger1-2.l
+                      {
+                        OFFSET 0.915930 -2.151960 1.546820
+                        CHANNELS 3 Zrotation Xrotation Yrotation 
+                        JOINT finger1-3.l
+                        {
+                          OFFSET 3.213210 -0.469680 0.247300
+                          CHANNELS 3 Zrotation Xrotation Yrotation 
+                          End Site
+                          {
+                            OFFSET 2.521210 -0.161290 -0.511422
+                          }
+                        }
+                      }
+                    }
+                  }
+            }
+          }
+        }
+      }
+    }
+  }
+  JOINT rButtock
+  {
+    OFFSET -8.77824 4.35084 1.2192
+    CHANNELS 3 Zrotation Xrotation Yrotation
+    JOINT rThigh
+    {
+      OFFSET 0 -1.70687 -2.19456
+      CHANNELS 3 Zrotation Xrotation Yrotation
+      JOINT rShin
+      {
+        OFFSET 0 -36.8199 0.73152
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT rFoot
+        {
+         
+       OFFSET 0.73152 -45.1104 -5.12064
+       CHANNELS 3 Zrotation Xrotation Yrotation
+       JOINT toe1-1.R
+       {
+        OFFSET 2.454000 -4.050002 13.194999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe1-2.R
+        {
+         OFFSET -0.214000 -0.646000 2.427000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         End Site
+         {
+          OFFSET -0.401900 -0.827789 2.725930
+         }
+        }
+       }
+       JOINT toe2-1.R
+       {
+        OFFSET 0.177000 -4.299998 13.329000
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe2-2.R
+        {
+         OFFSET -0.177000 -0.323000 2.039000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe2-3.R
+         {
+          OFFSET -0.067000 -0.440998 1.248000
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET -0.042990 -0.647306 1.660872
+          }
+         }
+        }
+       }
+       JOINT toe3-1.R
+       {
+        OFFSET -1.396000 -4.461999 13.078999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe3-2.R
+        {
+         OFFSET -0.161000 -0.247002 1.809000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe3-3.R
+         {
+          OFFSET -0.033000 -0.441999 1.202000
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET 0.032040 -0.433550 1.271800
+          }
+         }
+        }
+       }
+       JOINT toe4-1.R
+       {
+        OFFSET -2.888001 -4.480000 12.376999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe4-2.R
+        {
+         OFFSET -0.160000 -0.331998 1.491001
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe4-3.R
+         {
+          OFFSET 0.035999 -0.251002 1.138999
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET -0.088911 -0.568814 0.969530
+          }
+         }
+        }
+       }
+       JOINT toe5-1.R
+       {
+        OFFSET -4.257999 -4.467001 11.711999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe5-2.R
+        {
+         OFFSET -0.046000 -0.265999 0.982000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe5-3.R
+         {
+          OFFSET 0.086999 -0.372000 0.791000
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET -0.044329 -0.555482 1.085780
+          }
+         }
+        }
+       }
+        }
+      }
+    }
+  }
+  JOINT lButtock
+  {
+    OFFSET 8.77824 4.35084 1.2192
+    CHANNELS 3 Zrotation Xrotation Yrotation
+    JOINT lThigh
+    {
+      OFFSET 0 -1.70687 -2.19456
+      CHANNELS 3 Zrotation Xrotation Yrotation
+      JOINT lShin
+      {
+        OFFSET 0 -36.8199 0.73152
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT lFoot
+        { 
+
+       OFFSET -0.73152 -45.1104 -5.12064
+       CHANNELS 3 Zrotation Xrotation Yrotation
+       JOINT toe1-1.L
+       {
+        OFFSET -2.454000 -4.050002 13.194999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe1-2.L
+        {
+         OFFSET 0.214000 -0.646000 2.427000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         End Site
+         {
+          OFFSET 0.401900 -0.827789 2.725930
+         }
+        }
+       }
+       JOINT toe2-1.L
+       {
+        OFFSET -0.177000 -4.299998 13.329000
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe2-2.L
+        {
+         OFFSET 0.177000 -0.323000 2.039000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe2-3.L
+         {
+          OFFSET 0.067000 -0.440998 1.248000
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET 0.042990 -0.647306 1.660872
+          }
+         }
+        }
+       }
+       JOINT toe3-1.L
+       {
+        OFFSET 1.396000 -4.461999 13.078999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe3-2.L
+        {
+         OFFSET 0.161000 -0.247002 1.809000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe3-3.L
+         {
+          OFFSET 0.033000 -0.441999 1.202000
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET -0.032040 -0.433550 1.271800
+          }
+         }
+        }
+       }
+       JOINT toe4-1.L
+       {
+        OFFSET 2.888001 -4.480000 12.376999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe4-2.L
+        {
+         OFFSET 0.160000 -0.331998 1.491001
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe4-3.L
+         {
+          OFFSET -0.035999 -0.251002 1.138999
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET 0.088911 -0.568814 0.969530
+          }
+         }
+        }
+       }
+       JOINT toe5-1.L
+       {
+        OFFSET 4.257999 -4.467001 11.711999
+        CHANNELS 3 Zrotation Xrotation Yrotation
+        JOINT toe5-2.L
+        {
+         OFFSET 0.046000 -0.265999 0.982000
+         CHANNELS 3 Zrotation Xrotation Yrotation
+         JOINT toe5-3.L
+         {
+          OFFSET -0.086999 -0.372000 0.791000
+          CHANNELS 3 Zrotation Xrotation Yrotation
+          End Site
+          {
+           OFFSET 0.044329 -0.555482 1.085780
+          }
+         }
+        }
+       }
+        }
+      }
+    }
+  }
+}
+
+MOTION
+Frames: 35 
+Frame Time: 0.04
+18.2053 26.8556 -170.5715 -13.3749 76.9623 -12.8860 0 0 0 0 0 0 -1.5007 11.2727 3.3177 0 0 0 2.6044 -16.2041 24.0915 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 99.3137 25.6580 -17.0059 -23.6139 -41.7020 80.0597 -3.4045 -13.0009 -3.9807 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5540 -4.8597 -54.2169 23.7203 -33.6219 -88.8796 5.2936 -3.4637 3.1429 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.4426 -38.5126 -63.9419 -2.5883 21.4309 -0.3526 -31.9724 -12.5493 20.3933 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2815 -15.2954 -13.3874 0.4171 49.4384 -0.7856 2.4395 -7.5337 -3.5414 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+18.3770 27.1088 -172.1799 -13.3012 76.5386 -12.8150 0 0 0 0 0 0 -1.4925 11.2107 3.2995 0 0 0 2.5900 -16.1148 23.9588 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.7668 25.5167 -16.9123 -23.4839 -41.4723 79.6189 -3.3857 -12.9293 -3.9588 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5454 -4.8329 -53.9183 23.5897 -33.4368 -88.3902 5.2644 -3.4446 3.1256 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3631 -38.3006 -63.5898 -2.5741 21.3129 -0.3506 -31.7964 -12.4802 20.2810 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2414 -15.2112 -13.3137 0.4148 49.1661 -0.7813 2.4261 -7.4923 -3.5219 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+18.3530 27.0735 -171.9557 -13.2885 76.4653 -12.8027 0 0 0 0 0 0 -1.4910 11.1999 3.2963 0 0 0 2.5875 -16.0994 23.9359 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.6722 25.4923 -16.8961 -23.4614 -41.4326 79.5426 -3.3825 -12.9170 -3.9550 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5439 -4.8283 -53.8667 23.5671 -33.4048 -88.3055 5.2594 -3.4413 3.1226 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3493 -38.2639 -63.5289 -2.5716 21.2925 -0.3503 -31.7659 -12.4683 20.2616 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2345 -15.1966 -13.3009 0.4144 49.1190 -0.7806 2.4238 -7.4851 -3.5185 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+16.0786 28.2896 -169.8150 -13.2983 76.5217 -12.8122 0 0 0 0 0 0 -1.4921 11.2082 3.2987 0 0 0 2.5894 -16.1113 23.9535 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.7450 25.5111 -16.9085 -23.4787 -41.4632 79.6013 -3.3850 -12.9265 -3.9579 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5463 -4.8355 -53.9477 23.6025 -33.4550 -88.4383 5.2633 -3.4439 3.1249 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3599 -38.2921 -63.5758 -2.5735 21.3082 -0.3506 -31.7893 -12.4775 20.2765 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2398 -15.2078 -13.3107 0.4147 49.1553 -0.7811 2.4256 -7.4906 -3.5211 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+8.8576 32.6273 -165.0055 -13.3074 76.5743 -12.8210 0 0 0 0 0 0 -1.4932 11.2159 3.3010 0 0 0 2.5912 -16.1224 23.9700 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8129 25.5286 -16.9201 -23.4949 -41.4917 79.6561 -3.3873 -12.9354 -3.9606 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5491 -4.8444 -54.0466 23.6458 -33.5163 -88.6004 5.2669 -3.4462 3.1271 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3698 -38.3184 -63.6195 -2.5753 21.3229 -0.3508 -31.8112 -12.4861 20.2905 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2448 -15.2183 -13.3199 0.4150 49.1891 -0.7817 2.4272 -7.4957 -3.5235 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-1.4865 39.0530 -158.9738 -13.3107 76.5934 -12.8242 0 0 0 0 0 0 -1.4935 11.2187 3.3018 0 0 0 2.5919 -16.1264 23.9760 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8375 25.5350 -16.9244 -23.5007 -41.5020 79.6759 -3.3882 -12.9386 -3.9616 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5486 -4.8428 -54.0291 23.6381 -33.5055 -88.5717 5.2682 -3.4471 3.1279 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3734 -38.3280 -63.6353 -2.5759 21.3282 -0.3509 -31.8191 -12.4892 20.2955 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2466 -15.2220 -13.3232 0.4151 49.2013 -0.7819 2.4278 -7.4976 -3.5244 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-11.5915 45.5234 -153.8302 -13.3106 76.5925 -12.8241 0 0 0 0 0 0 -1.4935 11.2186 3.3018 0 0 0 2.5918 -16.1262 23.9757 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8365 25.5347 -16.9242 -23.5005 -41.5016 79.6750 -3.3881 -12.9385 -3.9616 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5462 -4.8353 -53.9447 23.6012 -33.4532 -88.4335 5.2682 -3.4471 3.1278 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3732 -38.3276 -63.6347 -2.5759 21.3279 -0.3509 -31.8188 -12.4890 20.2953 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2465 -15.2219 -13.3230 0.4151 49.2008 -0.7819 2.4278 -7.4975 -3.5244 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-20.4326 51.3722 -149.9148 -13.3097 76.5874 -12.8232 0 0 0 0 0 0 -1.4934 11.2178 3.3016 0 0 0 2.5917 -16.1251 23.9741 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8317 25.5335 -16.9234 -23.4993 -41.4995 79.6711 -3.3879 -12.9376 -3.9613 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5457 -4.8339 -53.9291 23.5943 -33.4435 -88.4078 5.2678 -3.4468 3.1276 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3722 -38.3250 -63.6304 -2.5757 21.3265 -0.3509 -31.8167 -12.4882 20.2940 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2460 -15.2209 -13.3222 0.4150 49.1975 -0.7818 2.4277 -7.4970 -3.5241 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-28.0603 56.5655 -146.7178 -13.3092 76.5845 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8324 25.5337 -16.9235 -23.4995 -41.4999 79.6717 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5472 -4.8384 -53.9801 23.6167 -33.4751 -88.4915 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3235 -63.6280 -2.5756 21.3257 -0.3508 -31.8154 -12.4877 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3216 0.4150 49.1956 -0.7818 2.4276 -7.4967 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-34.6383 61.1583 -143.9007 -13.3091 76.5839 -12.8226 0 0 0 0 0 0 -1.4933 11.2173 3.3014 0 0 0 2.5915 -16.1244 23.9730 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8356 25.5345 -16.9240 -23.5002 -41.5012 79.6743 -3.3877 -12.9370 -3.9611 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5481 -4.8413 -54.0124 23.6308 -33.4951 -88.5444 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3716 -38.3232 -63.6275 -2.5756 21.3255 -0.3508 -31.8152 -12.4876 20.2930 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2202 -13.3215 0.4150 49.1952 -0.7818 2.4275 -7.4967 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-40.2196 65.1540 -141.4042 -13.3091 76.5842 -12.8227 0 0 0 0 0 0 -1.4934 11.2173 3.3014 0 0 0 2.5916 -16.1245 23.9731 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8363 25.5347 -16.9242 -23.5004 -41.5015 79.6749 -3.3878 -12.9371 -3.9611 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5474 -4.8392 -53.9888 23.6205 -33.4805 -88.5058 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3716 -38.3234 -63.6277 -2.5756 21.3256 -0.3508 -31.8153 -12.4877 20.2931 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2202 -13.3216 0.4150 49.1954 -0.7818 2.4276 -7.4967 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-44.8207 68.5360 -139.2770 -13.3092 76.5845 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5465 -4.8363 -53.9565 23.6063 -33.4604 -88.4527 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6280 -2.5756 21.3257 -0.3508 -31.8155 -12.4877 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-48.4871 71.3002 -137.5531 -13.3092 76.5847 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1246 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8331 25.5339 -16.9236 -23.4997 -41.5002 79.6723 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5466 -4.8367 -53.9604 23.6081 -33.4629 -88.4592 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3258 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2458 -15.2203 -13.3217 0.4150 49.1958 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-51.3055 73.4933 -136.2163 -13.3092 76.5847 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1246 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8340 25.5341 -16.9237 -23.4999 -41.5005 79.6730 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5473 -4.8389 -53.9850 23.6188 -33.4781 -88.4994 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6282 -2.5756 21.3258 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2458 -15.2203 -13.3217 0.4150 49.1958 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-53.3997 75.1944 -135.2191 -13.3092 76.5847 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8352 25.5344 -16.9240 -23.5002 -41.5010 79.6740 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5475 -4.8395 -53.9919 23.6218 -33.4824 -88.5108 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3258 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.8417 76.4786 -134.5036 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8351 25.5344 -16.9240 -23.5001 -41.5010 79.6739 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8382 -53.9772 23.6154 -33.4733 -88.4867 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.6420 77.4259 -134.0055 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8342 25.5341 -16.9238 -23.4999 -41.5006 79.6732 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5468 -4.8372 -53.9665 23.6107 -33.4667 -88.4691 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.9038 78.1222 -133.6645 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8339 25.5341 -16.9237 -23.4998 -41.5005 79.6729 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5470 -4.8378 -53.9726 23.6134 -33.4705 -88.4792 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.8175 78.6377 -133.4248 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8344 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5473 -4.8387 -53.9827 23.6178 -33.4767 -88.4957 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.5384 79.0229 -133.2436 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8349 25.5343 -16.9239 -23.5001 -41.5009 79.6737 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5473 -4.8386 -53.9823 23.6177 -33.4765 -88.4951 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.2114 79.3223 -133.1226 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8347 25.5343 -16.9239 -23.5000 -41.5008 79.6736 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8380 -53.9750 23.6145 -33.4720 -88.4831 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.9509 79.5721 -133.0850 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8343 25.5342 -16.9238 -23.4999 -41.5006 79.6732 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5470 -4.8378 -53.9724 23.6133 -33.4703 -88.4788 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.7755 79.7870 -133.1099 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8343 25.5342 -16.9238 -23.4999 -41.5006 79.6732 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8381 -53.9765 23.6151 -33.4729 -88.4856 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.6831 79.9860 -133.1685 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5008 79.6735 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5472 -4.8384 -53.9801 23.6167 -33.4751 -88.4914 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.6848 80.1851 -133.2594 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8347 25.5343 -16.9239 -23.5000 -41.5008 79.6736 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5472 -4.8383 -53.9785 23.6160 -33.4741 -88.4888 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.7555 80.3788 -133.3691 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8380 -53.9754 23.6146 -33.4722 -88.4837 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.8557 80.5675 -133.4855 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8344 25.5342 -16.9238 -23.5000 -41.5007 79.6733 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8380 -53.9753 23.6146 -33.4721 -88.4835 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.9467 80.7460 -133.6008 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8344 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8382 -53.9774 23.6155 -33.4734 -88.4870 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-54.9964 80.9126 -133.7063 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5008 79.6735 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8383 -53.9784 23.6159 -33.4740 -88.4886 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.0302 81.0855 -133.8112 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8346 25.5342 -16.9238 -23.5000 -41.5008 79.6735 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8382 -53.9772 23.6154 -33.4733 -88.4867 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.0739 81.2775 -133.9278 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8381 -53.9761 23.6149 -33.4726 -88.4849 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.1360 81.4590 -134.0494 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8344 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8381 -53.9765 23.6151 -33.4729 -88.4855 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.2086 81.6035 -134.1662 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8382 -53.9774 23.6155 -33.4734 -88.4870 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.2585 81.7518 -134.2866 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8382 -53.9775 23.6155 -33.4735 -88.4872 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+-55.2968 81.9391 -134.4264 -13.3092 76.5846 -12.8227 0 0 0 0 0 0 -1.4934 11.2174 3.3015 0 0 0 2.5916 -16.1245 23.9732 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 98.8345 25.5342 -16.9238 -23.5000 -41.5007 79.6734 -3.3878 -12.9371 -3.9612 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1.5471 -4.8382 -53.9769 23.6153 -33.4731 -88.4862 5.2676 -3.4467 3.1275 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14.3717 -38.3236 -63.6281 -2.5756 21.3257 -0.3508 -31.8155 -12.4878 20.2932 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -7.2457 -15.2203 -13.3217 0.4150 49.1957 -0.7818 2.4276 -7.4968 -3.5240 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 

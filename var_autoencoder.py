@@ -264,40 +264,39 @@ def root_mean_squared_error_loss(y_true, y_pred):
 
 def VAE(latent_size=2):
     ## Définition de l'architecture du modèle
-    encoder_1_size = 512
-    encoder_1_size_1 = 256
-    encoder_1_size_2 = 128
-    encoder_1_size_3 = 64
-    encoder_1_size_4 = 32
+    encoder_1_size = 256
+    encoder_1_size_1 = 128
+    encoder_1_size_2 = 64
+    encoder_1_size_3 = 32
     latent_size = latent_size
     input_layer = tf.keras.layers.Input(shape = (25,2))
     flattened = tf.keras.layers.Flatten()(input_layer)
     encoder_1 = tf.keras.layers.Dense(encoder_1_size, activation = tf.keras.activations.linear)(flattened)
     encoder_1 = tf.keras.layers.BatchNormalization()(encoder_1)
     encoder_1 = tf.keras.layers.Dropout(0.2)(encoder_1)
-    encoder_2 = tf.keras.layers.Dense(encoder_1_size_1,activation = 'relu')(encoder_1)
+    encoder_2 = tf.keras.layers.Dense(encoder_1_size_1,activation = 'relu',kernel_initializer='glorot_normal')(encoder_1)
     encoder_2 = tf.keras.layers.BatchNormalization()(encoder_2)
     encoder_2 = tf.keras.layers.Dropout(0.2)(encoder_2)
-    encoder_3 = tf.keras.layers.Dense(encoder_1_size_2,activation = 'relu')(encoder_2)
+    encoder_3 = tf.keras.layers.Dense(encoder_1_size_2,activation = 'relu',kernel_initializer='glorot_normal')(encoder_2)
     encoder_3 = tf.keras.layers.BatchNormalization()(encoder_3)
     encoder_3 = tf.keras.layers.Dropout(0.2)(encoder_3)
-    encoder_4 = tf.keras.layers.Dense(encoder_1_size_3,activation = 'relu')(encoder_3)
+    encoder_4 = tf.keras.layers.Dense(encoder_1_size_3,activation = 'relu',kernel_initializer='glorot_normal')(encoder_3)
     encoder_4 = tf.keras.layers.BatchNormalization()(encoder_4)
     encoder_4 = tf.keras.layers.Dropout(0.2)(encoder_4)
     latent = tf.keras.layers.Dense(latent_size)(encoder_4)
     encoder = tf.keras.Model(inputs = input_layer, outputs = latent, name = 'encoder')
     #encoder.summary()
     input_layer_decoder = tf.keras.layers.Input(shape = encoder.output.shape[1:])
-    decoder_1 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'sigmoid')(input_layer_decoder)
+    decoder_1 = tf.keras.layers.Dense(encoder_1_size_3, activation = 'sigmoid',kernel_initializer='glorot_normal')(input_layer_decoder)
     decoder_1 = tf.keras.layers.BatchNormalization()(decoder_1)
     decoder_1 = tf.keras.layers.Dropout(0.2)(decoder_1)
-    decoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid')(decoder_1)
+    decoder_2 = tf.keras.layers.Dense(encoder_1_size_2, activation = 'sigmoid',kernel_initializer='glorot_normal')(decoder_1)
     decoder_2 = tf.keras.layers.BatchNormalization()(decoder_2)
-    decoder_2 = tf.keras.layers.Dropout(0.5)(decoder_2)
-    decoder_3 = tf.keras.layers.Dense(encoder_1_size_1, activation = 'sigmoid')(decoder_2)
+    decoder_2 = tf.keras.layers.Dropout(0.2)(decoder_2)
+    decoder_3 = tf.keras.layers.Dense(encoder_1_size_1, activation = 'sigmoid',kernel_initializer='glorot_normal')(decoder_2)
     decoder_3 = tf.keras.layers.BatchNormalization()(decoder_3)
     decoder_3 = tf.keras.layers.Dropout(0.2)(decoder_3)
-    decoder_4 = tf.keras.layers.Dense(encoder_1_size, activation = 'sigmoid')(decoder_3)
+    decoder_4 = tf.keras.layers.Dense(encoder_1_size, activation = 'sigmoid',kernel_initializer='glorot_normal')(decoder_3)
     decoder_4 = tf.keras.layers.BatchNormalization()(decoder_4)
     decoder_4 = tf.keras.layers.Dropout(0.2)(decoder_4)
     decoder_1 = tf.keras.layers.Dense(encoder.layers[1].output_shape[-1], activation = tf.keras.activations.linear)(decoder_4)
@@ -307,8 +306,7 @@ def VAE(latent_size=2):
 
     autoencoder = tf.keras.Model(inputs = encoder.input, outputs = decoder(encoder.output))
     autoencoder.summary()
-    adam=keras.optimizers.Adam(lr=0.001)
-    autoencoder.compile(optimizer=adam,loss="mse", metrics=["accuracy"])
+    autoencoder.compile(optimizer="adam",loss="mse", metrics=[tf.keras.metrics.RootMeanSquaredError(name='rmse')])
     return autoencoder,encoder,decoder
 
         
@@ -317,7 +315,7 @@ if __name__ == '__main__':
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
     parser.add_argument("test", help="path to data",type=bool,nargs='?',default=False)
-    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_3.npy")
+    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_pats-test_pats.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
@@ -329,9 +327,10 @@ if __name__ == '__main__':
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
     print(len(x_train))
-    x_test=x_train[0:35]
-    x_train=x_train[36:]
-    history=autoencoder.fit(x_train,x_train,batch_size=64,validation_split=0.2,shuffle=True,epochs=100)
+    x_train, x_test = train_test_split(x_train,test_size=0.1, random_state=42)
+    #x_test=x_train[0:1147]
+    #x_train=x_train[1148:]
+    history=autoencoder.fit(x_train,x_train,batch_size=64,validation_split=0.2,shuffle=True,epochs=300)
     
     #plt.figure()
     #plt.plot(history.history['loss'], label='loss')
@@ -366,7 +365,8 @@ if __name__ == '__main__':
     index=0
     for i in range(len(x_test)):
          encoded_img1=encoder.predict(x_test[i].reshape(1,x_test[0].shape[0],x_test[0].shape[1]))
-         print(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2)))
+         #print(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2)))
+         #print(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2))[0])
          save_json_for_MocapNET(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2)),index,True)
          index+=1
          

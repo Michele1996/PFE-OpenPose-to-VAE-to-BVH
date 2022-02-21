@@ -19,10 +19,13 @@ data = fin.read()
 #replace all occurrences of the required string
 data = data.replace('head', 'Head')
 data = data.replace('neck', 'Neck')
+data = data.replace('Neck1', 'neck1')
 data = data.replace('chest', 'Chest2')
 data = data.replace('abdomen', 'Chest')
 data = data.replace('rCollar', 'RightCollar')
 data = data.replace('lCollar', 'LeftCollar')
+data = data.replace('rShldr', 'RightShoulder')
+data = data.replace('lShldr', 'LeftShoulder')
 data = data.replace('rForeArm', 'RightElbow')
 data = data.replace('lForeArm', 'LeftElbow')
 data = data.replace('rHand', 'RightWrist')
@@ -136,7 +139,7 @@ for k in range(len(motion_lines)-1):
     start=motion_lines[k]
     end=motion_lines[k+1]
     #use 4 best
-    for i in range(3):
+    for i in range(4):
         stringa=str(motion_lines[k][0])+" "+str(motion_lines[k][1])+" "+str(motion_lines[k][2])+" "
         for j in range(0,len(motion_lines[0])-3,3):
             angles_start=[round(float(motion_lines[k][j+3+1]),2),round(float(motion_lines[k][j+3+2]),2),round(float(motion_lines[k][j+3]),2)]
@@ -147,7 +150,7 @@ for k in range(len(motion_lines)-1):
             #print("END")
             q1 = angles2quat(angles_start[0],angles_start[1],angles_start[2])
             q2 = angles2quat(angles_end[0],angles_end[1],angles_end[2])
-            ani_times = numpy.linspace(0, 1, 3)
+            ani_times = numpy.linspace(0, 1, 4)
             p=slerp(q1,q2,ani_times)
             #print(p)
             #print(p[i].xyzw)
