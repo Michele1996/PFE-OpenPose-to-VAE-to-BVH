@@ -315,7 +315,7 @@ if __name__ == '__main__':
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
     parser.add_argument("test", help="path to data",type=bool,nargs='?',default=False)
-    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_pats-test_pats.npy")
+    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_pats_test_2-test.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
@@ -327,9 +327,10 @@ if __name__ == '__main__':
     for i in range(len(x_train)):
         x_train[i]= scaler.fit_transform(x_train[i])
     print(len(x_train))
-    x_train, x_test = train_test_split(x_train,test_size=0.1, random_state=42)
-    #x_test=x_train[0:1147]
-    #x_train=x_train[1148:]
+    #x_train, x_test = train_test_split(x_train,test_size=0.1, random_state=42)
+    
+    x_test=x_train[0:1061]
+    x_train=x_train[1062:]
     history=autoencoder.fit(x_train,x_train,batch_size=64,validation_split=0.2,shuffle=True,epochs=300)
     
     #plt.figure()

@@ -4,7 +4,7 @@ import BVHSmooth.code.bvh as bvh
 import BVHSmooth.code.freqfilter as freqfilter
 import BVHSmooth.code.angle as angle
 import BVHSmooth.code.spacefilter as spacefilter
-
+from BVHSmooth.code.helper import progressbar
 
 
 def smooth(input,output,filter="butterworth",uo=60,order=2,border=100,sigma=0.2):
@@ -23,7 +23,7 @@ def smooth(input,output,filter="butterworth",uo=60,order=2,border=100,sigma=0.2)
 
     bvh_file = bvh.read_file(INPUT)
 
-    for j in range(len(bvh_file["ROTATIONS"][0,:,0])):
+    for j in progressbar(range(len(bvh_file["ROTATIONS"][0,:,0])), "APPLYING BUTTERWORTH FILTER: ", 40):
         for i in range(3):
             v = angle.floats_to_degrees(bvh_file["ROTATIONS"][:,j,i])
             p = angle.degrees_to_polars(v)
