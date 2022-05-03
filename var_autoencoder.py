@@ -231,7 +231,7 @@ def save_json_for_MocapNET(frame,index,test=False):
            vector.append(float(0.80))
     vector=vector[:len(vector)-1]
     dicto={"pose_keypoints_2d":vector}
-    #print("VETTORE ",vector)
+    print("VETTORE ",vector)
     data_set = {"version": 1.3, "people": [{"person_id":[-1],"pose_keypoints_2d":vector,"face_keypoints_2d":[],"hand_left_keypoints_2d":[],"hand_right_keypoints_2d":[],"pose_keypoints_3d":[],"face_keypoints_3d":[],"hand_left_keypoints_3d":[],"hand_right_keypoints_3d":[]}]}
     index="0000"+str(index)
     decalage=len(str(index))-5
@@ -246,11 +246,11 @@ def save_json_for_MocapNET(frame,index,test=False):
     if(test):
         if(not os.path.isdir(path+"\\Test")):
             os.mkdir(path+"\\Test")
-        if(not os.path.isdir(path+"\\Test\\OUTPUT_to_BVH")):
-            os.mkdir(path+"\\Test\\OUTPUT_to_BVH")
-        if(os.path.isfile(path+"\\Test\\OUTPUT_to_BVH\\"+filename)):
-            os.remove(path+"\\Test\\OUTPUT_to_BVH\\"+filename)
-        os.rename(os.path.join(path, filename), os.path.join(path+"\\Test\\OUTPUT_to_BVH",filename))
+        if(not os.path.isdir(path+"\\Test\\OUTPUT_to_BVH_PATS2")):
+            os.mkdir(path+"\\Test\\OUTPUT_to_BVH_PATS2")
+        if(os.path.isfile(path+"\\Test\\OUTPUT_to_BVH_PATS2\\"+filename)):
+            os.remove(path+"\\Test\\OUTPUT_to_BVH_PATS2\\"+filename)
+        os.rename(os.path.join(path, filename), os.path.join(path+"\\Test\\OUTPUT_to_BVH_PATS2",filename))
     else:
         if(not os.path.isdir(path+"\\MocapNET-master")):
            print("Error, MocapNET not found. Please install it to continue")
@@ -315,13 +315,13 @@ if __name__ == '__main__':
     parser.add_argument("nb_iter", help="number of iter creation of nb_frames frames by encoder",type=int)
     parser.add_argument("nb_frames", help="number of frame create by encoder",type=int)
     parser.add_argument("test", help="path to data",type=bool,nargs='?',default=False)
-    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_pats_test_2-test.npy")
+    parser.add_argument("data_file_location", help="path to data",type=str,nargs='?',default="kpoutput_test_pats2_test_increasefps-test.npy")
     args = parser.parse_args()
     nb_frames=args.nb_frames
     nb_iter=args.nb_iter
     save_test=args.test
     x_train=load_data(name =args.data_file_location)
-    autoencoder,encoder,decoder = VAE(latent_size = 25)
+    autoencoder,encoder,decoder = VAE(latent_size = 5)
     scaler = MinMaxScaler()
     # transform data
     for i in range(len(x_train)):
@@ -329,9 +329,9 @@ if __name__ == '__main__':
     print(len(x_train))
     #x_train, x_test = train_test_split(x_train,test_size=0.1, random_state=42)
     
-    x_test=x_train[0:1061]
-    x_train=x_train[1062:]
-    history=autoencoder.fit(x_train,x_train,batch_size=64,validation_split=0.2,shuffle=True,epochs=300)
+    x_test=x_train[0:3000]
+    x_train=x_train[3001:]
+    history=autoencoder.fit(x_train,x_train,batch_size=64,validation_split=0.2,shuffle=True,epochs=100)
     
     #plt.figure()
     #plt.plot(history.history['loss'], label='loss')
@@ -344,6 +344,7 @@ if __name__ == '__main__':
     
     test_image=x_train[0].reshape(1,x_train[0].shape[0],x_train[0].shape[1])
     encoded_img1=encoder.predict(test_image)
+    print("CODE SIZE ",encoded_img1.shape)
     #visu_skel(decoder.predict(encoded_img1),0)
     #visu_skel(x_train,0)
     
@@ -364,6 +365,7 @@ if __name__ == '__main__':
     #latent_representation_tSNE(x_train,True)
     #visu_interpo(x_train,nb_iter,args.test,nb_frames,scaler,latent_size=25,show=False)
     index=0
+    print("SAVING")
     for i in range(len(x_test)):
          encoded_img1=encoder.predict(x_test[i].reshape(1,x_test[0].shape[0],x_test[0].shape[1]))
          #print(scaler.inverse_transform(decoder.predict(encoded_img1).reshape(25,2)))

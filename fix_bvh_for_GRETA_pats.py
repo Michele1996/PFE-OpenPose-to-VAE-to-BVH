@@ -77,13 +77,13 @@ for p in range(len(motion_lines)):
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
            if("Shoulder" in i[0]):
-               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3])-45,2))
-               motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
-               motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
-           elif("Elbow" in i[0]):
                motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
-               motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
+               motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2])+15,2))
+           elif("Elbow" in i[0]):
+               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
+               motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1])-30,2))
+               motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2])+30,2))
            elif("Wrist"in i[0]):
                motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
@@ -95,12 +95,12 @@ for p in range(len(motion_lines)):
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
            if("Shoulder" in i[0]):
-               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3])+45,2))
+               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
                motion_lines[p][i[1]*3+3+1]=str(-round(float(motion_lines[p][i[1]*3+3+1]),2))
-               motion_lines[p][i[1]*3+3+2]=str(round(-float(motion_lines[p][i[1]*3+3+2]),2))
+               motion_lines[p][i[1]*3+3+2]=str(round(-float(motion_lines[p][i[1]*3+3+2])-15,2))
            elif("Elbow" in i[0]):
                motion_lines[p][i[1]*3+3]=str(round(-float(motion_lines[p][i[1]*3+3]),2))
-               motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
+               motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1])+81,2))
                motion_lines[p][i[1]*3+3+2]=str(round(-float(motion_lines[p][i[1]*3+3+2]),2))
            elif("Wrist"in i[0]):
                motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
@@ -108,11 +108,15 @@ for p in range(len(motion_lines)):
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
             
             
-        elif("Left" not in i[0] and "Right" not in i[0] and "Head" not in i[0] or "Foot" in i[0] or "Ankle" in i[0] or "Knee" in i[0]):
+        elif("Left" not in i[0] and "Right" not in i[0] and "Head" not in i[0] or "Foot" in i[0] or "Ankle" in i[0] or "Knee" in i[0] or "Hip" in i[0] ):
            #print(i)
            motion_lines[p][i[1]*3+3]=str(0)
            motion_lines[p][i[1]*3+3+1]=str(0)
            motion_lines[p][i[1]*3+3+2]=str(0)
+           if("Hips" in i[0]):
+               motion_lines[p][i[1]]=str(0)
+               motion_lines[p][i[1]+1]=str(0)
+               motion_lines[p][i[1]+2]=str(0)
             
                
        
@@ -142,7 +146,6 @@ for k in progressbar(range(len(motion_lines)-1), "SLERP (2 STEPS): ", 40):
             p=slerp(q1,q2,ani_times)
             #in order to be have the same orientation as GRETA we need to put z=-z and y=-y
             stringa=stringa+str(round(-angles_start[2]))+" "+str(round(angles_start[0]))+" "+str(-round(angles_start[1]))+" "
-            #stringa=stringa+str(round(angles_start[2]))+" "+str(round(angles_start[0]))+" "+str(round(angles_start[1]))+" "
         stringa+="\n"
         frames.append(stringa.split())
 modifs=[]

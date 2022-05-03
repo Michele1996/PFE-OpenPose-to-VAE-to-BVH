@@ -70,6 +70,11 @@ for line in l:
 for p in range(len(motion_lines)): 
     #print("Processing FRAME:"+str(p+1)+"/"+str(len(motion_lines)))
     for i in lines:
+        if("Head" in i[0]) :
+           print(motion_lines[p][i[1]*3+3], motion_lines[p][i[1]*3+3+1],motion_lines[p][i[1]*3+3+2])
+           a="-"+motion_lines[p][i[1]*3+3]
+           motion_lines[p][i[1]*3+3]=motion_lines[p][i[1]*3+3+1]
+           motion_lines[p][i[1]*3+3+1]=a
         if("Right" in i[0]):
            if("Collar" in i[0]):
                #print(i)
@@ -77,13 +82,19 @@ for p in range(len(motion_lines)):
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
            if("Shoulder" in i[0]):
-               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3])-45,2))
+               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
            elif("Elbow" in i[0]):
                motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
+               if(float(motion_lines[p][i[1]*3+3])<-20):
+                  motion_lines[p][i[1]*3+3]="-20"
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
+               if(float(motion_lines[p][i[1]*3+3+1])<-30):
+                  motion_lines[p][i[1]*3+3+1]="-30"
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
+               if(float(motion_lines[p][i[1]*3+3+2])<-20):
+                  motion_lines[p][i[1]*3+3+2]="-20"
            elif("Wrist"in i[0]):
                motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
@@ -95,7 +106,7 @@ for p in range(len(motion_lines)):
                motion_lines[p][i[1]*3+3+1]=str(round(float(motion_lines[p][i[1]*3+3+1]),2))
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
            if("Shoulder" in i[0]):
-               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3])+45,2))
+               motion_lines[p][i[1]*3+3]=str(round(float(motion_lines[p][i[1]*3+3]),2))
                motion_lines[p][i[1]*3+3+1]=str(-round(float(motion_lines[p][i[1]*3+3+1]),2))
                motion_lines[p][i[1]*3+3+2]=str(round(-float(motion_lines[p][i[1]*3+3+2]),2))
            elif("Elbow" in i[0]):
@@ -108,17 +119,21 @@ for p in range(len(motion_lines)):
                motion_lines[p][i[1]*3+3+2]=str(round(float(motion_lines[p][i[1]*3+3+2]),2))
             
             
-        elif("Left" not in i[0] and "Right" not in i[0] and "Head" not in i[0] or "Foot" in i[0] or "Ankle" in i[0] or "Knee" in i[0]):
+        elif("Left" not in i[0] and "Right" not in i[0] and "Head" not in i[0] or "Foot" in i[0] or "Ankle" in i[0] or "Knee" in i[0] or "Hip" in i[0] ):
            #print(i)
            motion_lines[p][i[1]*3+3]=str(0)
            motion_lines[p][i[1]*3+3+1]=str(0)
            motion_lines[p][i[1]*3+3+2]=str(0)
+           if("Hips" in i[0]):
+               motion_lines[p][i[1]]=str(0)
+               motion_lines[p][i[1]+1]=str(0)
+               motion_lines[p][i[1]+2]=str(0)
             
                
        
 for line in l:
     if("Frames" in line):
-        new_bvh.write(line)
+        new_bvh.write(line.replace("300","900"))
     elif("Frame Time" in line):
         new_bvh.write(line.replace("0.04","0.016667"))
         break
@@ -131,7 +146,7 @@ for k in progressbar(range(len(motion_lines)-1), "SLERP (2 STEPS): ", 40):
     start=motion_lines[k]
     end=motion_lines[k+1]
     #use 4 best
-    for i in range(1):
+    for i in range(3):
         stringa=str(motion_lines[k][0])+" "+str(motion_lines[k][1])+" "+str(motion_lines[k][2])+" "
         for j in range(0,len(motion_lines[0])-3,3):
             angles_start=[round(float(motion_lines[k][j+3+1]),2),round(float(motion_lines[k][j+3+2]),2),round(float(motion_lines[k][j+3]),2)]
@@ -146,7 +161,7 @@ for k in progressbar(range(len(motion_lines)-1), "SLERP (2 STEPS): ", 40):
         stringa+="\n"
         frames.append(stringa.split())
 modifs=[]
-d=1
+d=7
 for i in progressbar(range(len(frames[0])), "APPLYING MEDIAN FILTER ON EACH VALUE OF ALL THE FRAMES: ", 40):
     x=frames[0:len(frames)]
     modif=[]
