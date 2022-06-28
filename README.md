@@ -87,7 +87,8 @@ You can also visualize the animation on http://lo-th.github.io/olympe/BVH_player
 For the mesh, if the hair or other meshes are detached:
 * select the mesh to fix
 * in ObjectMode, go in modifier and remove the actual Armature modifier
-* add again the armature modifier, add the entire skeleton and then apply
+* add again the Armature modifier, add the entire skeleton and then apply
+* go on Object -> Relations and put Armature (it is set as Object by default)
 
 ## Fix BVH file for GRETA Animations
 The bvh file generated needs to be modified to be used in GRETA. First of all , the name of some joints needs to be modified then the right and left arm are switched<br/>
