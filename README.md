@@ -84,6 +84,10 @@ Now you have from a 2d Keypoints data , a 3D animation. You can check on Blender
 (To add a human model to the skeleton create by the bvh file you can check https://www.youtube.com/watch?v=GBSC10euloY)
 <br /><br />
 You can also visualize the animation on http://lo-th.github.io/olympe/BVH_player.html which is a visualization-only tool
+For the mesh, if the hair or other meshes are detached:
+* select the mesh to fix
+* in ObjectMode, go in modifier and remove the actual Armature modifier
+* add again the armature modifier, add the entire skeleton and then apply
 
 ## Fix BVH file for GRETA Animations
 The bvh file generated needs to be modified to be used in GRETA. First of all , the name of some joints needs to be modified then the right and left arm are switched<br/>
